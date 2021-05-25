@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiria Autofill</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        /* width */
+        
+         ::-webkit-scrollbar {
+            background-color: rgba(180, 180, 180, 1.0);
+            border-radius: 6.5px;
+            height: 10px;
+            left: 983px;
+            position: absolute;
+            top: 24px;
+            width: 10px;
+        }
+        /* Track */
+        
+         ::-webkit-scrollbar-track {
+            background-color: rgba(235, 235, 235, 1.0);
+            height: 616px;
+            left: 983px;
+            position: absolute;
+            top: 24px;
+            width: 10px;
+            border-radius: 11px
+        }
+        /* Handle */
+        
+         ::-webkit-scrollbar-thumb {
+            background: rgba(180, 180, 180, 1.0);
+            border-radius: 10px;
+        }
+        
+        .toastify {
+            padding: 12px 20px;
+            color: #ffffff;
+            display: inline-block;
+            box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px rgba(77, 96, 232, 0.3);
+            background: -webkit-linear-gradient(315deg, #73a5ff, #5477f5);
+            background: linear-gradient(135deg, #73a5ff, #5477f5);
+            position: fixed;
+            top: -150px;
+            right: 15px;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 3;
+            font-size: 17px;
+            font-family: "Lemon/Milk";
+        }
+        
+        .toastify.on {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="header">
+        <a class="card1" href="https://spiria.tools/">
+
+            <div class="header-left">
+
+                <img src="logo.png">
+                <h5 class="text-logo">Spiria Autofill</h5>
+
+            </div>
+        </a>
+
+        <div class="header-middle">
+            <h4>Welcome to your Dashboard!</h4>
+        </div>
+        <div class="header-right">
+            <a class="btn-website" href="https://dashboard.spiria.tools/dashboard">
+                <label>Dashboard</label>
+                <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.871948 0.846436L4.87195 6.00005L0.871948 11.1537" stroke-width="2" />
+                </svg>
+            </a>
+
+            <a href="#" class="show-menu" id="show-menu">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="28" height="4" rx="1" />
+                    <rect y="12" width="28" height="4" rx="1" />
+                    <rect y="24" width="28" height="4" rx="1" />
+                </svg>
+            </a>
+
+            <a href="#" class="hide-menu" id="hide-menu">
+                <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M25.4557 1.41416C26.2367 2.1952 26.2367 3.46153 25.4557 4.24258L4.94956 24.7487C4.16851 25.5297 2.90218 25.5297 2.12113 24.7487C1.34009 23.9676 1.34009 22.7013 2.12113 21.9202L22.6272 1.41416C23.4083 0.633107 24.6746 0.633107 25.4557 1.41416Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M24.7487 24.7488C23.9676 25.5298 22.7013 25.5298 21.9203 24.7488L1.41416 4.24265C0.633117 3.4616 0.633116 2.19527 1.41416 1.41423C2.19521 0.633177 3.46154 0.633177 4.24259 1.41423L24.7487 21.9203C25.5297 22.7014 25.5297 23.9677 24.7487 24.7488Z" />
+                </svg>
+            </a>
+        </div>
+    </section>
+    <section class="menu-mobile" style="display: none;">
+        <h4>Welcome in your Dashboard 👋</h4>
+        <a class="btn-website-mobile">
+            <label>Website</label>
+            <!-- <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.871948 0.846436L4.87195 6.00005L0.871948 11.1537" stroke-width="2" />
+            </svg> -->
+        </a>
+    </section>
+    <section class="main" id="main">
+        <div class="main-left">
+            <h3 class="text-setting">Settings</h3>
+            <div class="container-setting">
+                <label class="lbl-input">
+                    <img src="images/oval.svg">
+                    License Key
+                </label>
+                <div class="input-form">
+                    <input type="text" value="" placeholder="ce" id="key">
+                    <a class="btn-unbind">Deactivate</a>
+                </div>
+
+                <label class="lbl-input">
+                    <img src="images/oval.svg">
+                    Disabled Sites
+                </label>
+                <div class="input-form">
+                    <input type="text" value="" id="dsbi">
+                    <a class="btn-set" id="dsb">Set</a>
+                </div>
+
+                <label class="lbl-input">
+                    <img src="images/oval.svg">
+                    Discord Webhook
+                </label>
+                <div class="input-form">
+                    <input type="text" value="" id="dhook">
+                    <a class="btn-set" id=dwb>Set</a>
+                </div>
+
+                <label class="lbl-input">
+                    <img src="images/oval.svg">
+                    Discord Name
+                </label>
+
+                <div class="input-form">
+                    <input type="text" value="" id="dname">
+                    <a class="btn-set" id="dnb">Set</a>
+                </div>
+
+                <label class="lbl-input">
+                    <img src="images/oval.svg">
+                    Twitter Name
+                </label>
+                <div class="input-form">
+                    <input type="text" value="" id="tname">
+                    <a class="btn-set" id="tnb">Set</a>
+                </div>
+            </div>
+            <div class="container-button">
+                <a class="btn-export">Export Settings</a>
+                <a class="btn-import" id="import-btn">Import Settings</a>
+                <input id="import" type="file" value="Import Profile" hidden>
+            </div>
+        </div>
+        <div class="main-right">
+            <h3 class="text-profile">Profile</h3>
+            <div class="container-profile" id="profilecreation">
+                <div class="top">
+                    <a href="#" class="btn-back"><img src="images/arrow-back.svg"> Go back in Profile list</a>
+
+                    <div class="rounded">
+
+                        <div class="cover">
+                            <img class="main-logo-dark" src="logo.png" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-row">
+                    <div class="form-group">
+                        <label class="lbl-input">Profile</label>
+                        <select class="input-select" id="profiles">
+                            <option selected disabled>Select a profile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="lbl-input">Profile Name</label>
+                        <input type="text" class="input-text" value="" id="profileName">
+                    </div>
+                </div>
+
+                <div class="flex-row">
+                    <div class="form-group">
+                        <label class="lbl-input">First Name</label>
+                        <input type="text" class="input-text" value="" id="fname">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Last Name</label>
+                        <input type="text" class="input-text" value="" id="lname">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Email</label>
+                        <input type="text" class="input-text" value="" id="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Address Line 1</label>
+                        <input type="text" class="input-text" value="" id="address">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Address Line 2</label>
+                        <input type="text" class="input-text" value="" id="address2">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Country</label>
+                        <select class="input-select crs-country" id="country" data-region-id="stat">
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">State/Province</label>
+                        <select class="input-select" id="stat" data-value="shortcode">
+                            <option value="custom">Custom</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">City</label>
+                        <input type="text" class="input-text" value="" id="city">
+
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <label class="lbl-input">Zip Code</label>
+                        <input type="text" class="input-text" value="" id="zip">
+                    </div>
+                    <div class="form-group">
+                        <label class="lbl-input">Phone Number</label>
+                        <input type="text" class="input-text" value="" id="phone">
+                    </div>
+                </div>
+
+                <div class="flex-row">
+
+                </div>
+
+                <div class="flex-row">
+                    <div class="form-group">
+                        <label class="lbl-input">Credit Card Name</label>
+                        <input type="text" class="input-text" value="" id="CCName">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">CC Number</label>
+                        <input type="text" class="input-text" value="" id="CC">
+                    </div>
+                </div>
+
+                <div class="flex-row">
+                    <div class="form-group">
+                        <label class="lbl-input">Month</label>
+                        <select class="input-select magic" id="CCM">
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="lbl-input">Year</label>
+                        <select class="input-select" id="CCY">
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="lbl-input">CVV</label>
+                        <input class="input-text" value="" id="CVV">
+                    </div>
+                </div>
+
+                <input type="checkbox" class="input-checkbox" id="checkbox-billing">
+                <label for="checkbox-billing">
+                    Different Billing Address
+                </label>
+
+                <hr>
+
+                <div class="flex-row opacity-low" id="billing">
+                    <div class="form-group">
+                        <label class="lbl-input">First Name</label>
+                        <input type="text" class="input-text" value="" id="bfname" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Last Name</label>
+                        <input type="text" class="input-text" value="" id="blname" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Email</label>
+                        <input type="text" class="input-text" value="" id="bemail" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Address Line 1</label>
+                        <input type="text" class="input-text" value="" id="baddress" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Address Line 2</label>
+                        <input type="text" class="input-text" value="" id="baddress2" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Country</label>
+                        <select class="input-select crs-country" id="bcountry" data-region-id="bstat" disabled>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">State/Province</label>
+                        <select class="input-select" id="bstat" data-value="shortcode" disabled>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">City</label>
+                        <input type="text" class="input-text" value="" id="bcity" disabled>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl-input">Zip Code</label>
+                        <input type="text" class="input-text" value="" id="bzip">
+                    </div>
+                    <div class="form-group">
+                        <label class="lbl-input">Phone Number</label>
+                        <input type="text" class="input-text" value="" id="bphone">
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+            <div class="container-profile-empty" id="noprofile" style="width: auto">
+                <div class="profile-empty">
+                    <img class="profile-empty-image" src="logo.png" />
+                    <h5 class="profile-empty-title">You haven't created any profiles yet!</h5>
+                    <p class="profile-empty-detail">You can start creating a profile by clicking on the button below</p>
+
+                    <a class="btn-create-profile">Create Profile</a>
+                </div>
+            </div>
+
+            <div class="container-profile-list" id="profilelist">
+                <div class="list-item">
+                    <div class="item-left">
+                        <!-- <div class="img-rounded"> -->
+                        <!-- <div class="img-circle"> -->
+                        <!-- <img src="images/profile/profile-1.png"> -->
+                        <!-- </div> -->
+                        <!-- </div> -->
+                        <div class="container-detail-name">
+                            <h5 class="detail-name">Samantha Yu Lin</h5>
+                            <p class="detail-email" style="width: 235px">alex1@gmail.com</p>
+                            <p class="detail-email" id="name" style="width: 235px">alex1@gmail.com</p>
+
+                        </div>
+                    </div>
+                    <div class="item-middle">
+                        <div class="detail-left">
+                            <p>12 rue depuis, Paris, 75020, Ile de france, N/A, FRANCE, 0625282938</p>
+                        </div>
+                        <div class="detail-right">
+                            <div class="oval-group">
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                            </div>
+                            <p class="number">1234</p>
+                        </div>
+                    </div>
+                    <div class="item-right">
+                        <a href="#" class="btn-edit">
+                            <img src="images/icon-edit.svg">
+                        </a>
+                        <a href="#" class="btn-delete">
+                            <img src="images/icon-delete.svg">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- <div class="list-item">
+                    <div class="item-left">
+                        <div class="img-rounded">
+                            <div class="img-circle">
+                                <img src="images/profile/profile-1.png">
+                            </div>
+                        </div>
+                        <div class="container-detail-name">
+                            <h5 class="detail-name">Samantha Yu Lin</h5>
+                            <p class="detail-email">alex1@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="item-middle">
+                        <div class="detail-left">
+                            <p>12 rue depuis, Paris, 75020, Ile de france, N/A, FRANCE, 0625282938</p>
+                        </div>
+                        <div class="detail-right">
+                            <div class="oval-group">
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                            </div>
+                            <p class="number">1234</p>
+                        </div>
+                    </div>
+                    <div class="item-right">
+                        <a href="#" class="btn-edit">
+                            <img src="images/icon-edit.svg">
+                        </a>
+                        <a href="#" class="btn-delete">
+                            <img src="images/icon-delete.svg">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="item-left">
+                        <div class="img-rounded">
+                            <div class="img-circle">
+                                <img src="images/profile/profile-3.png">
+                            </div>
+                        </div>
+                        <div class="container-detail-name">
+                            <h5 class="detail-name">Samantha Yu Lin</h5>
+                            <p class="detail-email">alex1@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="item-middle">
+                        <div class="detail-left">
+                            <p>12 rue depuis, Paris, 75020, Ile de france, N/A, FRANCE, 0625282938</p>
+                        </div>
+                        <div class="detail-right">
+                            <div class="oval-group">
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                            </div>
+                            <p class="number">1234</p>
+                        </div>
+                    </div>
+                    <div class="item-right">
+                        <a href="#" class="btn-edit">
+                            <img src="images/icon-edit.svg">
+                        </a>
+                        <a href="#" class="btn-delete">
+                            <img src="images/icon-delete.svg">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="item-left">
+                        <div class="img-rounded">
+                            <div class="img-circle">
+                                <img src="images/profile/profile-4.png">
+                            </div>
+                        </div>
+                        <div class="container-detail-name">
+                            <h5 class="detail-name">Samantha Yu Lin</h5>
+                            <p class="detail-email">alex1@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="item-middle">
+                        <div class="detail-left">
+                            <p>12 rue depuis, Paris, 75020, Ile de france, N/A, FRANCE, 0625282938</p>
+                        </div>
+                        <div class="detail-right">
+                            <div class="oval-group">
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                            </div>
+                            <p class="number">1234</p>
+                        </div>
+                    </div>
+                    <div class="item-right">
+                        <a href="#" class="btn-edit">
+                            <img src="images/icon-edit.svg">
+                        </a>
+                        <a href="#" class="btn-delete">
+                            <img src="images/icon-delete.svg">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="item-left">
+                        <div class="img-rounded">
+                            <div class="img-circle">
+                                <img src="images/profile/profile-5.png">
+                            </div>
+                        </div>
+                        <div class="container-detail-name">
+                            <h5 class="detail-name">Samantha Yu Lin</h5>
+                            <p class="detail-email">alex1@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="item-middle">
+                        <div class="detail-left">
+                            <p>12 rue depuis, Paris, 75020, Ile de france, N/A, FRANCE, 0625282938</p>
+                        </div>
+                        <div class="detail-right">
+                            <div class="oval-group">
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                                <img src="images/icon-oval.svg" />
+                            </div>
+                            <p class="number">1234</p>
+                        </div>
+                    </div>
+                    <div class="item-right">
+                        <a href="#" class="btn-edit">
+                            <img src="images/icon-edit.svg">
+                        </a>
+                        <a href="#" class="btn-delete">
+                            <img src="images/icon-delete.svg">
+                        </a>
+                    </div>
+                </div> -->
+
+            </div>
+            <div class='buttons-section'>
+                <div class="container-button" id="cprof">
+                    <a class="btn-save" id="cret">Create Profile</a>
+                </div>
+
+                <div class="container-button" id="pcp2">
+                    <a class="btn-save">Save Profile</a>
+                    <a class="btn-delete" id="pdel">Delete Profile</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="container-button-switch">
+            <a class="switch-dark" id="switch-dark">
+                <label class="lbl-switch">Switch to Dark Mode</label>
+                <img src="images/darkmode-icon.svg">
+            </a>
+
+            <a class="switch-light" id="switch-light" style="display: none;">
+                <label class="lbl-switch">Switch to Light Mode</label>
+                <img src="images/lightmode-icon.svg">
+            </a>
+        </div>
+    </section>
+
+    <section class="main-nokey" id="noKey">
+        <div class="nokey">
+            <img src="logo.png">
+            <h4 class="nokey-title">Welcome your Spiria Dashboard!</h4>
+            <h5 class="nokey-detail">Please activate your license key to enjoy all the functionalities of Spiria.
+            </h5>
+            <p class="nokey-label">You can activate it by entering your license key in the input field below. </p>
+            <div class="container-input">
+                <input type="text" id="keyput">
+                <a class="btn-bind" id="bind" style="cursor: pointer">Bind</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/crs.min.js"></script>
+    <script src="js/toastify.js"></script>
+
+
+</body>
+
+</html>

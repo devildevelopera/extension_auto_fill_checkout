@@ -1,0 +1,48 @@
+{
+    "name": "Spiria Autofill Extension",
+    "version": "1.0.0.2",
+    "author": "Spiria Autofill",
+    "manifest_version": 2,
+    "content_scripts": [{
+            "matches": [
+                "https://*/*"
+            ],
+            "js": [
+                "inject/all.js"
+            ],
+            "all_frames": true
+        },
+        {
+            "matches": [
+                "https://www.supremenewyork.com/checkout"
+            ],
+            "js": [
+                "inject/supreme.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://*/*/checkouts/*"
+            ],
+            "js": [
+                "inject/shopify.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "storage",
+        "system.memory",
+        "gcm"
+    ],
+    "options_page": "dashboard.html",
+    "browser_action": {
+        "default_title": "Activate",
+        "default_popup": "extension-menu.html"
+    },
+    "icons": {
+        "128": "logo.png",
+        "16": "logo.png",
+        "48": "logo.png"
+    },
+    "content_security_policy": "script-src 'self' https://example.com; object-src 'self'"
+}

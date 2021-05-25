@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiria Autofill</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="css/extension.css">
+    <style>
+        html,
+        body {
+            height: 550px;
+            overflow: hidden;
+            width: 333px;
+        }
+        
+        .extension-menu {
+            bottom: 166px;
+            position: relative;
+            zoom: 73%
+        }
+        
+        label {
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Old versions of Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+        }
+        
+        input:disabled+label {
+            color: #808588;
+        }
+        
+        .bigimg {
+            max-width: 44px;
+            height: auto;
+        }
+        
+        .topbuttons {
+            flex-direction: row;
+            position: relative;
+            padding-top: 10px;
+            width: calc(100% - 20px);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="extension-menu" id="extm">
+        <input class="input-switch" type="checkbox" id="switch-button">
+        <label class="switch-button" for="switch-button" hidden>
+            <img class="power-off" src="images/icon-power-off.svg">
+        </label>
+
+        <div class="topbuttons">
+            <input class="input-switch" type="checkbox" id="autoreload-button">
+            <label class="switch-button" for="autoreload-button" style="padding-right: calc(100% - 128px);">
+                <img class="power-off bigimg" src="images/refresh.png" style="">
+            </label>
+
+            <input class="input-switch" type="checkbox" id="power-button">
+            <label class="switch-button" for="power-button" style="">
+                <img class="power-off" src="images/icon-power-off.svg">
+            </label>
+        </div>
+
+
+        <h4 class="title">Spiria Autofill</h4>
+        <p class="detail">Quick Settings</p>
+        <div class="container-menu">
+            <div class="menu-setting active">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M28.7876 11.8218L31.2471 12.3564C31.6865 12.4521 32 12.8411 32 13.2908V18.7092C32 19.1589 31.6865 19.5479 31.2471 19.6436L28.7876 20.1782C28.5737 20.833 28.3089 21.4717 27.9961 22.0869L29.3577 24.2048C29.6008 24.5833 29.5474 25.0801 29.2295 25.3979L25.398 29.2295C25.0801 29.5476 24.5833 29.6008 24.2048 29.3577L22.0869 27.9961C21.4717 28.3088 20.833 28.5737 20.1782 28.7876L19.6436 31.2471C19.5481 31.6865 19.159 32 18.7092 32H13.2908C12.8411 32 12.4519 31.6865 12.3565 31.2471L11.8218 28.7876C11.167 28.5737 10.5283 28.3088 9.9131 27.9961L7.79518 29.3577C7.41676 29.6008 6.91994 29.5474 6.60207 29.2295L2.77052 25.3979C2.45265 25.0801 2.39919 24.5833 2.64235 24.2048L4.00392 22.0869C3.69118 21.4717 3.42628 20.833 3.21242 20.1782L0.752945 19.6436C0.313492 19.5479 1.52588e-05 19.1589 1.52588e-05 18.7092V13.2908C1.52588e-05 12.8411 0.313492 12.4521 0.752945 12.3564L3.21242 11.8218C3.42628 11.167 3.69118 10.5283 4.00392 9.91309L2.64235 7.79517C2.39919 7.41675 2.45265 6.91992 2.77052 6.60205L6.60207 2.77051C6.91994 2.45264 7.41676 2.39917 7.79518 2.64233L9.9131 4.00391C10.5283 3.69116 11.167 3.42627 11.8218 3.2124L12.3565 0.75293C12.4519 0.313477 12.8411 0 13.2908 0H18.7092C19.159 0 19.5481 0.313477 19.6436 0.75293L20.1782 3.2124C20.833 3.42627 21.4717 3.69116 22.0869 4.00391L24.2048 2.64233C24.5833 2.39917 25.0801 2.45264 25.398 2.77051L29.2295 6.60205C29.5474 6.91992 29.6008 7.41675 29.3577 7.79517L27.9961 9.91309C28.3089 10.5283 28.5737 11.167 28.7876 11.8218ZM16 21.7371C19.1633 21.7371 21.7371 19.1633 21.7371 16C21.7371 12.8367 19.1633 10.2629 16 10.2629C12.8367 10.2629 10.263 12.8367 10.263 16C10.263 19.1633 12.8367 21.7371 16 21.7371Z" />
+                </svg>
+            </div>
+            <div class="menu-shop">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.8206" cy="24.658" r="3.30571" />
+                    <path
+                        d="M20.4679 21.3524C18.6422 21.3524 17.1622 22.8325 17.1622 24.6581C17.1622 26.4838 18.6422 27.9638 20.4679 27.9638C22.2935 27.9638 23.7736 26.4838 23.7736 24.6581C23.7736 22.8325 22.2935 21.3524 20.4679 21.3524Z" />
+                    <path
+                        d="M26.1011 17.9791H8.86416L8.52684 16.0227H22.6942C23.111 16.0239 23.4859 15.7695 23.6387 15.3818L27.0118 6.88138C27.2168 6.36144 26.9614 5.77377 26.4414 5.56887C26.3223 5.5219 26.1954 5.49798 26.0674 5.49838H6.77279L5.96322 0.843395C5.88008 0.351187 5.4504 -0.00688313 4.95127 0.0001004H1.07212C0.513238 0.0001004 0.0601654 0.453173 0.0601654 1.01205C0.0601654 1.57093 0.513238 2.02401 1.07212 2.02401H4.10798L7.00891 19.1597C7.09205 19.6519 7.52174 20.01 8.02086 20.003H26.1011C26.66 20.003 27.113 19.55 27.113 18.9911C27.113 18.4322 26.66 17.9791 26.1011 17.9791Z" />
+                </svg>
+            </div>
+        </div>
+        <select class="input-select" id="profslect">
+        </select>
+
+        <div class="container-menu-1">
+
+            <input class="input-autofill" type="checkbox" id="autofill">
+            <label for="autofill" class="btn-autofill" id="autofill">Autofill</label>
+
+            <input class="input-autosubmit" type="checkbox" id="autosubmit">
+            <label for="autosubmit" class="btn-autosubmit" id="autosubmit">Auto-Submit</label>
+
+            <!-- <input class="input-auto-jig" type="checkbox" id="auto-jig"> -->
+            <!-- <label for="auto-jig" class="btn-auto-jig">Auto-Jig</label> -->
+            <!-- <label for="auto-jig" class="btn-auto-jig">Coming Soon</label> -->
+
+            <input class="input-capcha" type="checkbox" id="capcha">
+            <!-- <label for="capcha" class="btn-capcha" id="capcha">Captcha Auto-Click</label> -->
+            <label for="capcha" class="btn-capcha" id="capcha">Coming Soon</label>
+
+        </div>
+
+        <div class="container-menu-2" style="display: none;">
+
+            <div class="container-checkbox">
+
+                <input class="input-shopify" type="checkbox" id="shopify">
+                <!-- <label for="shopify" class="btn-shopify">Shopify Auto Checkout</label> -->
+                <label for="shopify" class="btn-shopify">Coming Soon</label>
+
+                <input class="input-dsg" type="checkbox" id="dsg">
+                <!-- <label for="dsg" class="btn-dsg">DSG Auto Checkout</label> -->
+                <label for="dsg" class="btn-dsg">Coming Soon</label>
+
+                <input class="input-wallmart" type="checkbox" id="wallmart">
+                <!-- <label for="wallmart" class="btn-wallmart">Walmart Auto Checkout</label> -->
+                <label for="wallmart" class="btn-wallmart">Coming Soon</label>
+
+                <input class="input-finishline" type="checkbox" id="finishline">
+                <!-- <label for="finishline" class="btn-finishline">Finishline/JD Auto Checkout</label> -->
+                <label for="finishline" class="btn-finishline">Coming Soon</label>
+
+                <input class="input-wallmart" type="checkbox" id="shopifytocheckout">
+                <!-- <label for="shopifytocheckout" class="btn-wallmart">Shopify ATC to Checkout</label> -->
+                <label for="shopifytocheckout" class="btn-wallmart">Coming Soon</label>
+
+                <input class="input-finishline" type="checkbox" id="pokecent">
+                <!-- <label for="pokecent" class="btn-finishline">Pokemon Center ACO</label> -->
+                <label for="pokecent" class="btn-finishline">Coming Soon</label>
+
+                <input class="input-wallmart" type="checkbox" id="bestbuy">
+                <!-- <label for="bestbuy" class="btn-wallmart">BestBuy ACO</label> -->
+                <label for="bestbuy" class="btn-wallmart">Coming Soon</label>
+
+                <input class="input-finishline" type="checkbox" id="sqACO">
+                <!-- <label for="sqACO" class="btn-finishline">SquareSpace ACO</label> -->
+                <label for="sqACO" class="btn-finishline">Coming Soon</label>
+
+                <input class="input-finishline" type="checkbox" id="sTOC">
+                <!-- <label for="sTOC" class="btn-finishline" style="right: 3px; position: relative;">Supreme TOS</label> -->
+                <label for="sTOC" class="btn-finishline" style="right: 3px; position: relative;">Coming Soon</label>
+
+                <input class="input-finishline" type="checkbox" id="sCop">
+                <!-- <label for="sCop" class="btn-finishline" style="left: 3px; position: relative;">Supreme Force Cart</label> -->
+                <label for="sCop" class="btn-finishline" style="left: 3px; position: relative;">Coming Soon</label>
+
+                <input class="input-finishline" type="checkbox" id="supremeAutoCart">
+                <!-- <label for="supremeAutoCart" class="btn-finishline">Supreme ATC to Checkout</label> -->
+                <!-- <label for="supremeAutoCart" class="btn-finishline">Coming Soon</label> -->
+
+                <input class="input-supreme" type="checkbox" id="supreme">
+                <!-- <label for="supreme" class="btn-supreme" style="margin-left: 5px;">Supreme Auto Checkout</label> -->
+                <!-- <label for="supreme" class="btn-supreme" style="margin-left: 5px;">Coming Soon</label> -->
+
+            </div>
+
+            <div class="container-input" style="
+            left: 228px;
+            position: relative;
+        " id="delays">
+                <label><img src="images/oval.svg">Delay</label>
+                <input type="number" id="delay">
+            </div>
+        </div>
+
+        <a class="btn-dashboard">More Settings<svg width="6" height="12" viewBox="0 0 6 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.871948 0.846436L4.87195 6.00005L0.871948 11.1537" stroke-width="2" />
+            </svg></a>
+    </section>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+
+</html>

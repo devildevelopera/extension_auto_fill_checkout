@@ -1,0 +1,878 @@
+@import url("http://fonts.cdnfonts.com/css/lemonmilk");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Lemon/Milk";
+}
+
+body {
+  width: 100%;
+  background-color: #F2F2F2;
+}
+
+body.dark {
+  background-color: #121724;
+}
+
+a {
+  text-decoration: none;
+}
+
+.extension-menu {
+  background: #FFFFFF;
+  background-image: url("../images/bg-extension.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 175.5px auto;
+  padding-bottom: 34px;
+  width: 483.54px;
+  -webkit-box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
+          box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
+  color: #515151;
+}
+
+.extension-menu .input-switch {
+  display: none;
+}
+
+.extension-menu .switch-button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 16.5px 18.77px 0 0;
+}
+
+.extension-menu .switch-button:hover {
+  cursor: pointer;
+}
+
+.extension-menu .title {
+  margin-top: 24px;
+  font-family: "Lemon/Milk";
+  font-style: normal;
+  font-size: 33px;
+  line-height: 33px;
+  /* identical to box height, or 61% */
+  text-align: center;
+  letter-spacing: 0.128151px;
+  color: #262525;
+}
+
+.extension-menu .detail {
+  margin-top: 16px;
+  font-family: "Lemon/Milk";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  /* identical to box height, or 111% */
+  text-align: center;
+  letter-spacing: 0.0699004px;
+  color: #262525;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
+
+.extension-menu .container-menu {
+  margin-top: 33.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.extension-menu .container-menu .menu-setting {
+  margin-right: 57px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 67px;
+  height: 63px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.0572279);
+  border-radius: 15px;
+}
+
+.extension-menu .container-menu .menu-setting svg {
+  fill: #515151;
+}
+
+.extension-menu .container-menu .menu-setting:hover {
+  background-color: #ea16f5;
+  cursor: pointer;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.extension-menu .container-menu .menu-setting:hover svg {
+  fill: #FFFFFF;
+}
+
+.extension-menu .container-menu .menu-shop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 67px;
+  height: 63px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.0572279);
+  border-radius: 15px;
+}
+
+.extension-menu .container-menu .menu-shop svg {
+  fill: #515151;
+}
+
+.extension-menu .container-menu .menu-shop:hover {
+  background-color: #ea16f5;
+  cursor: pointer;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.extension-menu .container-menu .menu-shop:hover svg {
+  fill: #FFFFFF;
+}
+
+.extension-menu .input-select {
+  padding: 0 21px;
+  margin-top: 39px;
+  width: 226px;
+  height: 54px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #FFFFFF;
+  border: 1px solid #E0E5EB;
+  -webkit-box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
+          box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
+  border-radius: 7px;
+  font-size: 17px;
+  line-height: 20px;
+  /* identical to box height, or 118% */
+  letter-spacing: 0.196787px;
+}
+
+.extension-menu .input-select:hover {
+  cursor: pointer;
+}
+
+.extension-menu .input-autofill,
+.extension-menu .input-autosubmit {
+  display: none;
+}
+
+.extension-menu .input-autofill:checked + .btn-autofill,
+.extension-menu .input-autofill:checked + .btn-autosubmit,
+.extension-menu .input-autosubmit:checked + .btn-autofill,
+.extension-menu .input-autosubmit:checked + .btn-autosubmit {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-menu .btn-autofill,
+.extension-menu .btn-autosubmit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 37.81px;
+  width: 286.84px;
+  height: 62px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 13px;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu .btn-autofill:hover,
+.extension-menu .btn-autosubmit:hover {
+  cursor: pointer;
+}
+
+.extension-menu .input-auto-jig {
+  display: none;
+}
+
+.extension-menu .input-auto-jig:checked + .btn-auto-jig {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-menu .btn-auto-jig {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 22px;
+  width: 286.84px;
+  height: 62px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 13px;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu .btn-auto-jig:hover {
+  cursor: pointer;
+}
+
+.extension-menu .input-capcha {
+  display: none;
+}
+
+.extension-menu .input-capcha:checked + .btn-capcha {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-menu .btn-capcha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 22px;
+  width: 286.84px;
+  height: 62px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 13px;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu .btn-capcha:hover {
+  cursor: pointer;
+}
+
+.extension-menu .btn-dashboard {
+  margin-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 184px;
+  height: 54px;
+  background: #FFFFFF;
+  border: 1px solid #E0E5EB;
+  -webkit-box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
+          box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
+  border-radius: 7px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height, or 131% */
+  text-align: center;
+  letter-spacing: 0.0621336px;
+  color: #ea16f5;
+}
+
+.extension-menu .btn-dashboard svg {
+  margin-left: 16.15px;
+  stroke: #ea16f5;
+}
+
+.extension-menu .btn-dashboard:hover {
+  cursor: pointer;
+  background: #ea16f5;
+  color: #FFFFFF;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.extension-menu .btn-dashboard:hover svg {
+  stroke: #FFFFFF;
+}
+
+.extension-menu .active {
+  background: #ea16f5 !important;
+  color: #FFFFFF !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.extension-menu .active svg {
+  fill: #FFFFFF !important;
+}
+
+.extension-menu.dark {
+  background: #222B45;
+  color: #FFFFFF;
+}
+
+.extension-menu.dark .title {
+  color: #FFFFFF;
+}
+
+.extension-menu.dark .detail {
+  color: #FFFFFF;
+  opacity: 0.75;
+}
+
+.extension-menu.dark .container-menu .menu-setting {
+  background: #151A30;
+}
+
+.extension-menu.dark .container-menu .menu-setting:hover {
+  background: #ea16f5;
+}
+
+.extension-menu.dark .container-menu .menu-setting:hover svg {
+  fill: #FFFFFF;
+}
+
+.extension-menu.dark .container-menu .menu-shop {
+  background: #151A30;
+}
+
+.extension-menu.dark .container-menu .menu-shop:hover {
+  background: #ea16f5;
+}
+
+.extension-menu.dark .container-menu .menu-shop:hover svg {
+  fill: #FFFFFF;
+}
+
+.extension-menu.dark .input-select {
+  background: #151A30;
+  border: 1px solid #E0E5EB;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: inherit;
+}
+
+.extension-menu.dark .input-select:hover {
+  cursor: pointer;
+}
+
+.extension-menu.dark .container-flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.extension-menu.dark .btn-autofill,
+.extension-menu.dark .btn-autosubmit {
+  background: #151A30;
+}
+
+.extension-menu.dark .btn-autofill:hover,
+.extension-menu.dark .btn-autosubmit:hover {
+  cursor: pointer;
+}
+
+.extension-menu.dark .btn-auto-jig {
+  background: #151A30;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu.dark .btn-auto-jig:hover {
+  cursor: pointer;
+}
+
+.extension-menu.dark .btn-capcha {
+  background: #151A30;
+}
+
+.extension-menu.dark .btn-capcha:hover {
+  cursor: pointer;
+}
+
+.extension-menu.dark .btn-dashboard {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  background: #151A30;
+  color: #FFFFFF;
+}
+
+.extension-menu.dark .btn-dashboard svg {
+  stroke: #FFFFFF;
+}
+
+.extension-menu.dark .btn-dashboard:hover {
+  background: #ea16f5;
+  color: #FFFFFF;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.extension-menu.dark .btn-dashboard:hover svg {
+  stroke: #FFFFFF;
+}
+
+.extension-menu {
+  width: 700px;
+}
+
+.extension-menu .container-checkbox {
+  padding: 0 50px;
+  margin-top: 15.81px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.extension-menu .container-checkbox .input-shopify {
+  display: none;
+}
+
+.extension-menu .container-checkbox .input-shopify:checked + .btn-shopify {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-menu .container-checkbox .btn-shopify {
+  margin-top: 22px;
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 286.84px;
+  height: 62px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 13px;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu .container-checkbox .btn-shopify:hover {
+  cursor: pointer;
+}
+
+.extension-menu .container-checkbox .input-dsg {
+  display: none;
+}
+
+.extension-menu .container-checkbox .input-dsg:checked + .btn-dsg {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-menu .container-checkbox .btn-dsg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 22px;
+  width: 286.84px;
+  height: 62px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 13px;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu .container-checkbox .btn-dsg:hover {
+  cursor: pointer;
+}
+
+.extension-menu .container-checkbox .input-wallmart {
+  display: none;
+}
+
+.extension-menu .container-checkbox .input-wallmart:checked + .btn-wallmart {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-menu .container-checkbox .btn-wallmart {
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 22px;
+  width: 286.84px;
+  height: 62px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 13px;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu .container-checkbox .btn-wallmart:hover {
+  cursor: pointer;
+}
+
+.extension-menu .container-checkbox .input-finishline {
+  display: none;
+}
+
+.extension-menu .container-checkbox .input-finishline:checked + .btn-finishline {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-menu .container-checkbox .btn-finishline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 22px;
+  width: 286.84px;
+  height: 62px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 13px;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu .container-checkbox .btn-finishline:hover {
+  cursor: pointer;
+}
+
+.extension-menu .container-checkbox .input-supreme {
+  display: none;
+}
+
+.extension-menu .container-checkbox .input-supreme:checked + .btn-supreme {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-menu .container-checkbox .btn-supreme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 22px;
+  width: 286.84px;
+  height: 62px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 13px;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu .container-checkbox .btn-supreme:hover {
+  cursor: pointer;
+}
+
+.extension-menu .container-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 24.61px;
+}
+
+.extension-menu .container-input label {
+  margin-right: 30.8px;
+}
+
+.extension-menu .container-input label img {
+  margin-right: 8.8px;
+}
+
+.extension-menu .container-input input {
+  padding: 17px 30px 13px;
+  width: 128px;
+  height: 46px;
+  background: #FFFFFF;
+  border-radius: 3px;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  /* identical to box height, or 50% */
+  letter-spacing: 0.208362px;
+  color: #515151;
+}
+
+.extension-menu .active {
+  background: #ea16f5 !important;
+  color: #FFFFFF !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.extension-menu .active svg {
+  fill: #FFFFFF !important;
+}
+
+.extension-menu.dark {
+  background: #222B45;
+  color: #FFFFFF;
+}
+
+.extension-menu.dark .title {
+  color: #FFFFFF;
+}
+
+.extension-menu.dark .detail {
+  color: #FFFFFF;
+  opacity: 0.75;
+}
+
+.extension-menu.dark .input-select {
+  background: #151A30;
+  border: 1px solid #E0E5EB;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: inherit;
+}
+
+.extension-menu.dark .input-select:hover {
+  cursor: pointer;
+}
+
+.extension-menu.dark .btn-shopify {
+  background: #151A30;
+}
+
+.extension-menu.dark .btn-shopify:hover {
+  cursor: pointer;
+}
+
+.extension-menu.dark .btn-dsg {
+  background: #151A30;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu.dark .btn-dsg:hover {
+  cursor: pointer;
+}
+
+.extension-menu.dark .btn-wallmart {
+  background: #151A30;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu.dark .btn-wallmart:hover {
+  cursor: pointer;
+}
+
+.extension-menu.dark .btn-finishline {
+  background: #151A30;
+  /* identical to box height, or 65% */
+  text-align: center;
+}
+
+.extension-menu.dark .btn-finishline:hover {
+  cursor: pointer;
+}
+
+.extension-menu.dark .btn-supreme {
+  background: #151A30;
+}
+
+.extension-menu.dark .btn-supreme:hover {
+  cursor: pointer;
+}
+
+.extension-menu.dark .container-input input {
+  color: inherit;
+  background: #151A30;
+}
+
+.extension-menu.dark .btn-dashboard {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  background: #151A30;
+  color: #FFFFFF;
+}
+
+.extension-menu.dark .btn-dashboard svg {
+  margin-left: 16.15px;
+  stroke: #FFFFFF;
+}
+
+.extension-menu.dark .btn-dashboard:hover {
+  background: #ea16f5;
+  color: #FFFFFF;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.extension-menu.dark .btn-dashboard:hover svg {
+  stroke: #FFFFFF;
+}
+
+@media only screen and (max-width: 690px) {
+  .extension-menu {
+    width: calc(100% - 20px);
+  }
+  .extension-menu .container-checkbox .btn-shopify,
+  .extension-menu .container-checkbox .btn-wallmart {
+    margin-right: 0;
+  }
+}
+/*# sourceMappingURL=extension.css.map */

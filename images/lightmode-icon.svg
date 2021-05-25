@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="45px" viewBox="0 0 46 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>sun</title>
+    <g id="Spiria-Scripts-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard01(dark-mode)" transform="translate(-1778.000000, -981.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="sun" transform="translate(1778.779026, 981.000000)">
+                <circle id="Oval" opacity="0.234956287" cx="22.5" cy="22.5" r="22"></circle>
+                <circle id="Oval" opacity="0.234956287" cx="22.5" cy="22.5" r="18"></circle>
+                <circle id="Oval" cx="22.5" cy="22.5" r="14.3285714"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
