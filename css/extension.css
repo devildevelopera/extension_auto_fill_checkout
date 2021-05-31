@@ -19,11 +19,43 @@ body.dark {
   background-color: #121724;
 }
 
+html,
+body {
+  height: 550px;
+  overflow: hidden;
+  width: 333px;
+}
+
+label {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+input:disabled + label {
+  color: #808588;
+}
+
+.bigimg {
+  max-width: 44px;
+  height: auto;
+}
+
 a {
   text-decoration: none;
 }
 
 .extension-menu {
+  bottom: 166px;
+  position: relative;
+  zoom: 73%;
   background: #FFFFFF;
   background-image: url("../images/bg-extension.svg");
   background-position: bottom;
@@ -45,6 +77,16 @@ a {
   -webkit-box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
           box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
   color: #515151;
+}
+
+.extension-menu .topbuttons {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  padding-top: 10px;
+  width: calc(100% - 20px);
 }
 
 .extension-menu .input-switch {
