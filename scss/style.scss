@@ -5,15 +5,7 @@
     box-sizing: border-box;
 }
 
-html {
-    font-family: "Lemon/Milk";
-    height: 100%;
-}
-
 body {
-    width: 100%;
-    min-height: 100%;
-    height: 100%;
     font-family: "Lemon/Milk";
     background-color: #F2F2F2;
 }
@@ -53,7 +45,6 @@ a {
         .text-logo {
             margin-left: 11.41px;
             font-family: "Lemon/Milk";
-            font-style: normal;
             font-size: 16px;
             line-height: 21px;
             text-align: center;
@@ -128,7 +119,6 @@ a {
         color: #FFFFFF;
         line-height: 43px;
         font-weight: bold;
-        font-style: normal;
         font-family: 'Rany';
     }
 }
@@ -924,7 +914,6 @@ a {
         .nokey-label {
             margin-top: 33px;
             font-family: "Lemon/Milk";
-            font-style: normal;
             font-weight: normal;
             font-size: 15px;
             line-height: 15px;
@@ -946,7 +935,6 @@ a {
                 background: rgba(42, 42, 55, 0.8);
                 box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
                 font-family: 'LEMON MILK';
-                font-style: normal;
                 font-weight: 300;
                 font-size: 30px;
                 line-height: 41px;
