@@ -7,6 +7,7 @@
 }
 
 body {
+  color: #FFFFFF;
   font-family: "Lemon/Milk";
   background-color: #F2F2F2;
 }
@@ -42,9 +43,7 @@ a {
 }
 
 .extension-menu {
-  height: 100%;
   position: relative;
-  zoom: 73%;
   background: #2b2a33;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,28 +58,66 @@ a {
   width: 483.54px;
   -webkit-box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
           box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
-  color: #515151;
 }
 
 .extension-menu .topbuttons {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: relative;
-  padding-top: 10px;
-  width: calc(100% - 20px);
+  padding: 4px 14px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Rany';
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #302e37;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.extension-menu .topbuttons > div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.extension-menu .topbuttons > div:first-child img {
+  height: 28px;
+  margin-right: 4px;
+}
+
+.extension-menu .topbuttons > div:first-child > div:first-child span {
+  margin-right: 20px;
+  border-right: 2px solid #FFFFFF;
+}
+
+.extension-menu .topbuttons > div:first-child > div:last-child span {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 13px;
+  margin-right: 20px;
+}
+
+.extension-menu .topbuttons > div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.extension-menu .topbuttons label {
+  font-size: 10px;
+  line-height: 9px;
 }
 
 .extension-menu .input-switch {
   display: none;
-}
-
-.extension-menu .switch-button {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin: 16.5px 18.77px 0 0;
 }
 
 .extension-menu .switch-button:hover {
@@ -210,34 +247,26 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 37.81px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 583px;
   height: 78px;
   border-radius: 39px;
-  border: 3px solid #FFFFFF;
+  margin-top: 30px;
+  border: 2px solid #FFFFFF;
   background: transparent;
   -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
           box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 13px;
-  /* identical to box height, or 65% */
   text-align: center;
   font-size: 38px;
+  font-family: 'Rany';
+  font-weight: normal;
   line-height: 34px;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  color: #FFFFFF;
 }
 
 .extension-menu .btn-autofill:hover,
@@ -775,9 +804,6 @@ a {
 }
 
 @media only screen and (max-width: 690px) {
-  .extension-menu {
-    width: 100%;
-  }
   .extension-menu .container-checkbox .btn-shopify,
   .extension-menu .container-checkbox .btn-wallmart {
     margin-right: 0;
