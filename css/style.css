@@ -243,7 +243,6 @@ a {
 }
 
 .header.dark .header-right .show-menu {
-  display: none;
   color: #FFFFFF;
 }
 
@@ -1600,7 +1599,7 @@ a {
   }
 }
 
-@media only screen and (max-width: 424px) {
+@media (max-width: 424px) {
   .header {
     padding: 10px 25px;
   }

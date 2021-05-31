@@ -203,7 +203,6 @@ a {
             }
         }
         .show-menu {
-            display: none;
             color: #FFFFFF;
             &:hover {
                 cursor: pointer;
@@ -1269,7 +1268,7 @@ a {
     }
 }
 
-@media only screen and (max-width: 424px) {
+@media (max-width: 424px) {
     .header {
         padding: 10px 25px;
         .header-middle {
