@@ -52,6 +52,7 @@ $(document).ready(function() {
     })
 
     chrome.storage.local.get(function(items) {
+
         document.getElementById('profilesSelect').value = items.activeProfile;
 
         if (items.autofill) {
@@ -68,9 +69,8 @@ $(document).ready(function() {
         if (items.autosubmit) {
             document.getElementById('autosubmit').checked = true
         }
+    });
 
-
-    })
 });
 
 
@@ -145,7 +145,6 @@ function verifyKey() {
     chrome.storage.local.get(function(items) {
         if (!(items.key === undefined)) {
             chrome.instanceID.getID(function(info) {
-                // var hwid = JSON.parse((JSON.stringify(info)));
                 var hwid = info;
                 var myHeaders = new Headers();
                 myHeaders.append("Content-Type", "application/json");
@@ -159,57 +158,52 @@ function verifyKey() {
                     })
                 };
 
-
                 fetch(`https://api.hyper.co/v4/licenses/${items.key}`, requestOptions)
                     .then(response => response.text())
                     .then(result => {
+                        var resultDTC = JSON.parse(result)
+                        console.log(resultDTC)
+                        if (resultDTC) {
+                            console.log("Verified");
+                        } else {
+                            chrome.storage.local.remove(['key', 'activation_token']);
+                            chrome.storage.local.set({
+                                activated: false
+                            })
 
-                            var resultDTC = JSON.parse(result)
-                            console.log(resultDTC)
-                            if (resultDTC) {
-                                console.log("Verified")
-                            } else {
-                                chrome.storage.local.remove(['key', 'activation_token']);
-                                chrome.storage.local.set({
-                                    activated: false
-                                })
-
-                                chrome.runtime.openOptionsPage();
-
-                            }
+                            chrome.runtime.openOptionsPage();
                         }
-
-                    )
+                    })
                     .catch(error => console.log('error', error));
             });
-        } else {
 
+        } else {
             chrome.storage.local.remove(['key', 'activation_token']);
             chrome.storage.local.set({
                 activated: false
-            })
+            });
+
             chrome.runtime.openOptionsPage();
         }
     })
 }
 
 
-function setStorage(varibl, value) {
+function setStorage(variable, value) {
 
     chrome.storage.local.set({
-        [varibl]: value
-    })
+        [variable]: value
+    });
 
 }
 
 function turnAllOff() {
-    var checked = document.querySelectorAll("input:checked")
-    console.log(checked)
+    var checked = document.querySelectorAll("input:checked");
+
     if (checked.length > 0) {
-        var i;
-        for (i = 0; i < checked.length; i++) {
+        for (var i = 0; i < checked.length; i++) {
             if (checked[i].id != "switch-button") {
-                checked[i].click()
+                checked[i].click();
             }
         }
     }
@@ -254,13 +248,13 @@ document.getElementById('autofill-btn').addEventListener("click", function() {
         document.getElementById('shopify').disabled = false;
         document.getElementById('stripe').disabled = false;
     }
-    acoBadge()
+
+    acoBadge();
 
 })
 
 document.getElementById('autosubmit-btn').addEventListener("click", function() {
     setStorage("autosubmit", document.getElementById('autosubmit').checked)
-
 });
 
 document.getElementById('autoauth-btn').addEventListener("click", function() {
@@ -268,44 +262,44 @@ document.getElementById('autoauth-btn').addEventListener("click", function() {
 });
 
 
-document.getElementById('power-button').addEventListener("click", turnAllOff)
+document.getElementById('power-button').addEventListener("click", turnAllOff);
 
 document.getElementById('shopify').addEventListener("click", function() {
     setStorage("ACOEnabled", document.getElementById('shopify').checked)
-    acoBadge()
+    acoBadge();
 });
+
 document.getElementById('supremeAutoCart').addEventListener("click", function() {
     setStorage("supremeATC", document.getElementById('supremeAutoCart').checked)
-
 });
+
 document.getElementById('stripe').addEventListener("click", function() {
     setStorage("walmartACO", document.getElementById('stripe').checked)
-    acoBadge()
+    acoBadge();
 });
+
 document.getElementById('shopifytocheckout').addEventListener("click", function() {
     setStorage("ATCCHO", document.getElementById('shopifytocheckout').checked)
-
 });
+
 document.getElementById('sCop').addEventListener("click", function() {
     setStorage("sCop", document.getElementById('sCop').checked)
-
 });
 
-
 document.getElementById('supreme').addEventListener("click", function() {
-    setStorage("supremeACO", document.getElementById('supreme').checked)
+    setStorage("supremeACO", document.getElementById('supreme').checked);
+
     if (document.getElementById('supreme').checked) {
         $('#delays').show()
     } else {
         $('#delays').hide()
     }
-    acoBadge()
+
+    acoBadge();
 });
 
 document.getElementById('profilesSelect').addEventListener("change", function() {
-
     setProfileActive(document.getElementById('profilesSelect').value)
-
 })
 
 function setAutoReload() {
