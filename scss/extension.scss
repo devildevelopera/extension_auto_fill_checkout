@@ -71,10 +71,10 @@ body {
             &:last-child {
                 display: flex;
                 align-items: center;
-                .input-switch {
+                input {
                     display: none;
                 }
-                label.switch-button {
+                label {
                     font-size: 10px;
                     line-height: 9px;
                     &:hover {

@@ -261,9 +261,7 @@ function turnAllOff() {
 
     if (checked.length > 0) {
         for (var i = 0; i < checked.length; i++) {
-            if (checked[i].id != "switch-button") {
-                checked[i].click();
-            }
+            checked[i].click();
         }
     }
 }

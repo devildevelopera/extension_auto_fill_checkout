@@ -104,16 +104,16 @@ body label {
           align-items: center;
 }
 
-.extension-popup .top-menu > div:last-child .input-switch {
+.extension-popup .top-menu > div:last-child input {
   display: none;
 }
 
-.extension-popup .top-menu > div:last-child label.switch-button {
+.extension-popup .top-menu > div:last-child label {
   font-size: 10px;
   line-height: 9px;
 }
 
-.extension-popup .top-menu > div:last-child label.switch-button:hover {
+.extension-popup .top-menu > div:last-child label:hover {
   cursor: pointer;
 }
 
