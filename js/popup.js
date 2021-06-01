@@ -71,9 +71,9 @@ $(document).ready(function() {
         if (items.capClick) {
             document.getElementById('capcha').checked = true
         }
-        // if (items.autojig) {
-        //     document.getElementById('auto-jig').checked = true
-        // }
+        if (items.autojig) {
+            document.getElementById('autojig').checked = true
+        }
 
         if (items.ACOEnabled) {
             document.getElementById('shopify').checked = true
@@ -268,7 +268,7 @@ function acoBadge() {
 }
 
 
-document.getElementById('autofill').addEventListener("click", function() {
+document.getElementById('autofill-btn').addEventListener("click", function() {
     setStorage("fillEnabled", document.getElementById('autofill').checked);
     if (!(document.getElementById('autofill').checked)) {
         chrome.storage.local.set({
@@ -294,15 +294,14 @@ document.getElementById('autofill').addEventListener("click", function() {
 
 })
 
-document.getElementById('autosubmit').addEventListener("click", function() {
+document.getElementById('autosubmit-btn').addEventListener("click", function() {
     setStorage("autosubmit", document.getElementById('autosubmit').checked)
 
 });
 
-// document.getElementById('auto-jig').addEventListener("click", function() {
-//     setStorage("autojig", document.getElementById('auto-jig').checked)
-
-// });
+document.getElementById('autojig-btn').addEventListener("click", function() {
+    setStorage("autojig", document.getElementById('autojig').checked)
+});
 
 document.getElementById('capcha').addEventListener("click", function() {
     setStorage("capClick", document.getElementById('capcha').checked)

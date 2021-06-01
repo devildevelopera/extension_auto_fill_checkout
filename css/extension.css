@@ -130,9 +130,16 @@ body label {
       justify-content: space-around;
 }
 
-.extension-popup .container-main .btn-autofill,
-.extension-popup .container-main .btn-auto-jig,
-.extension-popup .container-main .btn-autosubmit {
+.extension-popup .container-main input {
+  display: none;
+}
+
+.extension-popup .container-main input:checked + label {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-popup .container-main label {
   width: 583px;
   height: 78px;
   display: -webkit-box;
@@ -154,9 +161,7 @@ body label {
           box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
 }
 
-.extension-popup .container-main .btn-autofill:hover,
-.extension-popup .container-main .btn-auto-jig:hover,
-.extension-popup .container-main .btn-autosubmit:hover {
+.extension-popup .container-main label:hover {
   cursor: pointer;
 }
 
@@ -179,39 +184,34 @@ body label {
 
 .extension-popup .container-detail > div input:checked + label {
   background: #ea16f5;
-  color: #FFFFFF;
 }
 
 .extension-popup .container-detail > div label {
+  width: 583px;
+  height: 78px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  font-size: 38px;
+  line-height: 34px;
+  text-align: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 583px;
-  height: 78px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: transparent;
   border: 2px solid #FFFFFF;
   -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
           box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-  font-size: 38px;
-  line-height: 34px;
-  text-align: center;
 }
 
 .extension-popup .container-detail > div label:hover {
   cursor: pointer;
 }
 
-.extension-popup .input-select {
+.extension-popup .container-profiles .input-select {
   padding: 0 21px;
   margin-top: 39px;
   width: 226px;
@@ -237,30 +237,8 @@ body label {
   letter-spacing: 0.196787px;
 }
 
-.extension-popup .input-select:hover {
+.extension-popup .container-profiles .input-select:hover {
   cursor: pointer;
-}
-
-.extension-popup .input-autofill,
-.extension-popup .input-autosubmit {
-  display: none;
-}
-
-.extension-popup .input-autofill:checked + .btn-autofill,
-.extension-popup .input-autofill:checked + .btn-autosubmit,
-.extension-popup .input-autosubmit:checked + .btn-autofill,
-.extension-popup .input-autosubmit:checked + .btn-autosubmit {
-  background: #ea16f5;
-  color: #FFFFFF;
-}
-
-.extension-popup .input-auto-jig {
-  display: none;
-}
-
-.extension-popup .input-auto-jig:checked + .btn-auto-jig {
-  background: #ea16f5;
-  color: #FFFFFF;
 }
 
 .extension-popup .active {

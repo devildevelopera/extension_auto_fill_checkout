@@ -89,9 +89,16 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        .btn-autofill,
-        .btn-auto-jig,
-        .btn-autosubmit {
+        input {
+            display: none;
+            &:checked {
+                &+label {
+                    background: #ea16f5;
+                    color: #FFFFFF;
+                }
+            }
+        }
+        label {
             width: 583px;
             height: 78px;
             display: flex;
@@ -120,66 +127,46 @@ body {
                 &:checked {
                     &+label {
                         background: #ea16f5;
-                        color: #FFFFFF;
                     }
                 }
             }
             label {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
                 width: 583px;
                 height: 78px;
-                background: transparent;
-                border: 2px solid #FFFFFF;
-                box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+                display: flex;
                 font-size: 38px;
                 line-height: 34px;
                 text-align: center;
+                align-items: center;
+                justify-content: center;
+                background: transparent;
+                border: 2px solid #FFFFFF;
+                box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
                 &:hover {
                     cursor: pointer;
                 }
             }
         }
     }
-    .input-select {
-        padding: 0 21px;
-        margin-top: 39px;
-        width: 226px;
-        height: 54px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        background: #FFFFFF;
-        border: 1px solid #E0E5EB;
-        box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
-        border-radius: 7px;
-        font-size: 17px;
-        line-height: 20px;
-        /* identical to box height, or 118% */
-        letter-spacing: 0.196787px;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-    .input-autofill,
-    .input-autosubmit {
-        display: none;
-        &:checked {
-            &+.btn-autofill,
-            &+.btn-autosubmit {
-                background: #ea16f5;
-                color: #FFFFFF;
-            }
-        }
-    }
-    .input-auto-jig {
-        display: none;
-        &:checked {
-            &+.btn-auto-jig {
-                background: #ea16f5;
-                color: #FFFFFF;
+    .container-profiles {
+        .input-select {
+            padding: 0 21px;
+            margin-top: 39px;
+            width: 226px;
+            height: 54px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: #FFFFFF;
+            border: 1px solid #E0E5EB;
+            box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
+            border-radius: 7px;
+            font-size: 17px;
+            line-height: 20px;
+            /* identical to box height, or 118% */
+            letter-spacing: 0.196787px;
+            &:hover {
+                cursor: pointer;
             }
         }
     }
