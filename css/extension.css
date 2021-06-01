@@ -138,6 +138,9 @@ body label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: 38px;
+  line-height: 34px;
+  text-align: center;
   border-radius: 39px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -145,16 +148,10 @@ body label {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 2px solid #FFFFFF;
   background: transparent;
+  border: 2px solid #FFFFFF;
   -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
           box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-  text-align: center;
-  font-size: 38px;
-  font-family: 'Rany';
-  font-weight: normal;
-  line-height: 34px;
-  color: #FFFFFF;
 }
 
 .extension-popup .container-main .btn-autofill:hover,
@@ -209,46 +206,13 @@ body label {
   border: 2px solid #FFFFFF;
   -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
           box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 13px;
+  font-size: 38px;
+  line-height: 34px;
   text-align: center;
 }
 
 .extension-popup .container-detail .container-checkbox > div label:hover {
   cursor: pointer;
-}
-
-.extension-popup .container-detail .container-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 24.61px;
-}
-
-.extension-popup .container-detail .container-input label {
-  margin-right: 30.8px;
-}
-
-.extension-popup .container-detail .container-input label img {
-  margin-right: 8.8px;
-}
-
-.extension-popup .container-detail .container-input input {
-  padding: 17px 30px 13px;
-  width: 128px;
-  height: 46px;
-  background: #FFFFFF;
-  border-radius: 3px;
-  border: none;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 18px;
-  letter-spacing: 0.208362px;
-  color: #515151;
 }
 
 .extension-popup .btn-dashboard {
