@@ -212,13 +212,14 @@ body label {
 }
 
 .extension-popup .container-profiles .input-select {
-  padding: 0 21px;
-  margin-top: 39px;
   width: 226px;
   height: 54px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: 17px;
+  line-height: 20px;
+  border-radius: 7px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -226,40 +227,14 @@ body label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #FFFFFF;
+  background: transparent;
   border: 1px solid #E0E5EB;
+  letter-spacing: 0.196787px;
   -webkit-box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
           box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
-  border-radius: 7px;
-  font-size: 17px;
-  line-height: 20px;
-  /* identical to box height, or 118% */
-  letter-spacing: 0.196787px;
 }
 
 .extension-popup .container-profiles .input-select:hover {
   cursor: pointer;
-}
-
-.extension-popup .active {
-  background: #ea16f5 !important;
-  color: #FFFFFF !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-}
-
-.extension-popup .active svg {
-  fill: #FFFFFF !important;
-}
-
-.extension-menu .active {
-  background: #ea16f5 !important;
-  color: #FFFFFF !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-}
-
-.extension-menu .active svg {
-  fill: #FFFFFF !important;
 }
 /*# sourceMappingURL=extension.css.map */

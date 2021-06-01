@@ -203,7 +203,6 @@ function loadEditor() {
 
     profilesToSelect("profiles");
 
-
 }
 
 
@@ -420,24 +419,14 @@ function profilesToSelect(id) {
     // get reference to select element
     var sel = document.getElementById(id);
 
-    console.log(sel)
     chrome.storage.local.get(function(items) {
         if (!(items.profile == "undefined")) {
-            console.log("Selector")
             profiles = dctNames(items.profiles)
             var i = 0
             for (i = 0; i < profiles.length; i++) {
-                console.log(profiles[i])
-                    // create new option element
                 var opt = document.createElement('option');
-
-                // create text node to add to option element (opt)
                 opt.innerText = profiles[i];
-
-                // set value property of opt
                 opt.value = profiles[i];
-
-                // add opt to end of select box (sel)
                 sel.appendChild(opt);
             }
         }

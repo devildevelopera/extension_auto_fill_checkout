@@ -150,43 +150,21 @@ body {
     }
     .container-profiles {
         .input-select {
-            padding: 0 21px;
-            margin-top: 39px;
             width: 226px;
             height: 54px;
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            background: #FFFFFF;
-            border: 1px solid #E0E5EB;
-            box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
-            border-radius: 7px;
             font-size: 17px;
             line-height: 20px;
-            /* identical to box height, or 118% */
+            border-radius: 7px;
+            flex-direction: row;
+            align-items: center;
+            background: transparent;
+            border: 1px solid #E0E5EB;
             letter-spacing: 0.196787px;
+            box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
             &:hover {
                 cursor: pointer;
             }
-        }
-    }
-    .active {
-        background: #ea16f5 !important;
-        color: #FFFFFF !important;
-        box-shadow: none !important;
-        svg {
-            fill: #FFFFFF !important;
-        }
-    }
-}
-
-.extension-menu {
-    .active {
-        background: #ea16f5 !important;
-        color: #FFFFFF !important;
-        box-shadow: none !important;
-        svg {
-            fill: #FFFFFF !important;
         }
     }
 }

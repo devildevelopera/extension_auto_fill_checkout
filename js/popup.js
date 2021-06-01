@@ -1,62 +1,61 @@
 $(document).ready(function() {
-    $('.container-profiles').hide();
+
     $('.container-detail').hide();
+    $('.container-profiles').hide();
 
-    verifyKey()
-    profilesToSelect('profslect')
+    verifyKey();
+    profilesToSelect();
 
-    $(document).ready(function() {
-        $("#delays").hide();
+    $('.top-menu-detail').on('click', function() {
 
-        $('.top-menu-detail').on('click', function() {
-            $('.container-profiles').hide();
-            $('.container-main').hide();
-            $('.container-detail').show();
+        $('.container-main').hide();
+        $('.container-detail').show();
+        $('.container-profiles').hide();
 
-            chrome.storage.local.get(function(items) {
+        chrome.storage.local.get(function(items) {
 
-                if (items.supremeAco) {
-                    document.getElementById('supreme').checked = true
-                    $('#delays').show()
-                } else {
-                    document.getElementById('supreme').checked = false
-                }
-                if (items.walmartACO) {
-                    document.getElementById('wallmart').checked = true
-                } else {
-                    document.getElementById('wallmart').checked = false
-                }
-                if (items.sCop) {
-                    document.getElementById('sCop').checked = true
-                } else {
+            if (items.supremeAco) {
+                document.getElementById('supreme').checked = true
+                $('#delays').show()
+            } else {
+                document.getElementById('supreme').checked = false
+            }
+            if (items.walmartACO) {
+                document.getElementById('wallmart').checked = true
+            } else {
+                document.getElementById('wallmart').checked = false
+            }
+            if (items.sCop) {
+                document.getElementById('sCop').checked = true
+            } else {
 
-                }
+            }
 
-                if (items.supremeATC) {
-                    document.getElementById('supremeAutoCart').checked = true
-                } else {}
-                if (!(items.supremeDelay == undefined)) {
-                    document.getElementById('delay').value = items.supremeDelay;
-                } else {
+            if (items.supremeATC) {
+                document.getElementById('supremeAutoCart').checked = true
+            } else {}
 
-                }
+            if (!(items.supremeDelay == undefined)) {
+                document.getElementById('delay').value = items.supremeDelay;
+            } else {
 
-            })
+            }
+
         })
+    })
 
 
-        $('.top-menu-main').on('click', function() {
-            $('.container-detail').hide();
-            $('.container-main').show();
-        })
-    });
+    $('.top-menu-main').on('click', function() {
+        $('.container-detail').hide();
+        $('.container-main').show();
+    })
 
     $(".top-menu-settings").on('click', function(e) {
         chrome.runtime.openOptionsPage();
     })
 
     chrome.storage.local.get(function(items) {
-        document.getElementById('profslect').value = items.activeProfile;
+        document.getElementById('profilesSelect').value = items.activeProfile;
 
         if (items.fillEnabled) {
             document.getElementById('autofill').checked = true
@@ -81,43 +80,26 @@ $(document).ready(function() {
             document.getElementById('shopify').checked = false
 
         }
-
-
-
-
-
     })
 });
 
 
-function profilesToSelect(id) {
-    // get reference to select element
-    var sel = document.getElementById(id);
+function profilesToSelect() {
 
-    console.log('sel: ', sel);
+    var sel = document.getElementById('profilesSelect');
+
     chrome.storage.local.get(function(items) {
-        console.log('items: ', items);
         if (items.profiles) {
-            console.log("Selector");
             profiles = dctNames(items.profiles);
             var i = 0
             for (i = 0; i < profiles.length; i++) {
                 console.log(profiles[i])
-                    // create new option element
                 var opt = document.createElement('option');
-
-                // create text node to add to option element (opt)
                 opt.innerText = profiles[i];
-
-                // set value property of opt
                 opt.value = profiles[i];
-
-                // add opt to end of select box (sel)
                 sel.appendChild(opt);
             }
         }
-
-
     })
 }
 
@@ -161,10 +143,6 @@ function setProfileActive(profile) {
         setStorage("bcountry", profiledct.bcountry)
         setStorage("splitBilling", profiledct.splitBilling)
         setStorage("activeProfile", profile)
-
-
-
-
 
     })
 
@@ -221,10 +199,6 @@ function verifyKey() {
                 activated: false
             })
             chrome.runtime.openOptionsPage();
-
-
-
-
         }
     })
 }
@@ -337,17 +311,7 @@ document.getElementById('supreme').addEventListener("click", function() {
     setStorage("supremeAco", document.getElementById('supreme').checked)
     if (document.getElementById('supreme').checked) {
         $('#delays').show()
-        document.body.style.height = "599px"
-        document.body.style.width = "520px"
-        document.styleSheets[1].addRule("html", "width: 520px; height: 150px")
-        document.getElementById('extm').style.height = "800px"
-
     } else {
-        document.body.style.height = "542px"
-        document.body.style.width = "520px"
-        document.styleSheets[1].addRule("html", "width: 520px; height: 150px")
-        document.getElementById('extm').style.height = "722px"
-
         $('#delays').hide()
     }
     acoBadge()
@@ -358,9 +322,9 @@ document.getElementById('delay').addEventListener("change", function() {
 
 });
 
-document.getElementById('profslect').addEventListener("change", function() {
+document.getElementById('profilesSelect').addEventListener("change", function() {
 
-    setProfileActive(document.getElementById('profslect').value)
+    setProfileActive(document.getElementById('profilesSelect').value)
 
 })
 
