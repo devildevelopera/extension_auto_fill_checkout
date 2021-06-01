@@ -1,45 +1,23 @@
 $(document).ready(function() {
+    $('#profslect').hide();
+    $('.btn-dashboard').hide();
+    $('.container-menu-2').hide();
+
     verifyKey()
     profilesToSelect('profslect')
 
     $(document).ready(function() {
-        $("#delays").hide()
-        $('#switch-button').on('click', function(e) {
-            if (e.target.checked === true) {
-                $('body').addClass('dark');
-                $('.extension-menu').addClass('dark');
-            } else if (e.target.checked === false) {
-                $('body').removeClass('dark');
-                $('.extension-menu').removeClass('dark');
-            }
-        })
+        $("#delays").hide();
 
-        $('.menu-shop').on('click', function() {
+        $('.top-menu-detail').on('click', function() {
             $('.menu-setting').removeClass('active');
             $('.menu-shop').addClass('active');
-            $('#profslect').hide()
+            $('#profslect').hide();
             $('.btn-dashboard').hide()
             $('.container-menu-1').hide();
             $('.container-menu-2').show();
 
             chrome.storage.local.get(function(items) {
-                if (items.dsgACO) {
-                    document.getElementById('dsg').checked = true
-                } else {
-                    document.getElementById('dsg').checked = false
-                }
-
-
-                if (items.BBACO) {
-                    document.getElementById('bestbuy').checked = true
-                } else {
-                    document.getElementById('bestbuy').checked = false
-                }
-                if (items.pokeACO) {
-                    document.getElementById('pokecent').checked = true
-                } else {
-                    document.getElementById('pokecent').checked = false
-                }
 
                 if (items.supremeAco) {
                     document.getElementById('supreme').checked = true
@@ -51,22 +29,6 @@ $(document).ready(function() {
                     document.getElementById('wallmart').checked = true
                 } else {
                     document.getElementById('wallmart').checked = false
-                }
-                if (items.fnlACO) {
-                    document.getElementById('finishline').checked = true
-                } else {
-                    document.getElementById('finishline').checked = false
-
-                }
-                if (items.ATCCHO) {
-                    document.getElementById('shopifytocheckout').checked = true
-                } else {
-
-                }
-                if (items.sTOC) {
-                    document.getElementById('sTOC').checked = true
-                } else {
-
                 }
                 if (items.sCop) {
                     document.getElementById('sCop').checked = true
@@ -82,32 +44,8 @@ $(document).ready(function() {
                 } else {
 
                 }
-                if (items.SQAutoCheckout) {
-                    document.getElementById('sqACO').checked = true;
-                } else {
-                    document.getElementById('sqACO').checked = false;
-                }
+
             })
-
-
-            setTimeout(() => {
-                if (document.getElementById('supreme').checked) {
-                    console.log("SUPREME CHECKED")
-                    document.body.style.height = "599px"
-                    document.body.style.width = "520px"
-                    document.styleSheets[1].addRule("html", "width: 520px; height: 150px")
-                    document.getElementById('extm').style.height = "800px"
-                } else {
-                    console.log("SUPREME NOT CHECKED")
-
-                    document.body.style.height = "556px"
-                    document.body.style.width = "520px"
-                    document.styleSheets[1].addRule("html", "width: 520px; height: 150px")
-                    document.getElementById('extm').style.height = "742px"
-
-                }
-            }, 20);
-
         })
 
 
@@ -139,13 +77,8 @@ $(document).ready(function() {
             document.getElementById('autofill').checked = true
 
         } else {
-            document.getElementById('dsg').disabled = true;
-            document.getElementById('pokecent').disabled = true;
-            document.getElementById('bestbuy').disabled = true;
-            document.getElementById('finishline').disabled = true;
             document.getElementById('shopify').disabled = true;
             document.getElementById('wallmart').disabled = true;
-            document.getElementById('sqACO').disabled = true;
         }
         if (items.autosubmit) {
             document.getElementById('autosubmit').checked = true
@@ -334,7 +267,7 @@ function turnAllOff() {
 }
 
 function acoBadge() {
-    if (document.getElementById('shopify').checked || document.getElementById('dsg').checked || document.getElementById('sqACO').checked || document.getElementById('finishline').checked || document.getElementById('wallmart').checked || document.getElementById('supreme').checked || document.getElementById('bestbuy').checked || document.getElementById('pokecent').checked) {
+    if (document.getElementById('shopify').checked || document.getElementById('wallmart').checked || document.getElementById('supreme').checked) {
         chrome.browserAction.setBadgeBackgroundColor({
             color: [255, 0, 0, 230]
         });
@@ -355,38 +288,22 @@ document.getElementById('autofill').addEventListener("click", function() {
     if (!(document.getElementById('autofill').checked)) {
         chrome.storage.local.set({
             ACOEnabled: false,
-            dsgACO: false,
             fnlACO: false,
             walmartACO: false,
             SQAutoCheckout: false,
             BBACO: false,
             pokeACO: false
         })
-        document.getElementById('dsg').disabled = true;
-        document.getElementById('finishline').disabled = true;
         document.getElementById('shopify').disabled = true;
         document.getElementById('wallmart').disabled = true;
-        document.getElementById('sqACO').disabled = true;
-        document.getElementById('bestbuy').disabled = true;
-        document.getElementById('pokecent').disabled = true;
 
 
-        document.getElementById('dsg').checked = false;
-        document.getElementById('finishline').checked = false;
         document.getElementById('shopify').checked = false;
         document.getElementById('wallmart').checked = false;
-        document.getElementById('sqACO').checked = false;
-        document.getElementById('bestbuy').checked = false;
-        document.getElementById('pokecent').checked = false;
 
     } else {
-        document.getElementById('dsg').disabled = false;
-        document.getElementById('finishline').disabled = false;
         document.getElementById('shopify').disabled = false;
         document.getElementById('wallmart').disabled = false;
-        document.getElementById('sqACO').disabled = false;
-        document.getElementById('bestbuy').disabled = false;
-        document.getElementById('pokecent').disabled = false;
     }
     acoBadge()
 
@@ -414,26 +331,6 @@ document.getElementById('shopify').addEventListener("click", function() {
     setStorage("ACOEnabled", document.getElementById('shopify').checked)
     acoBadge()
 });
-
-document.getElementById('dsg').addEventListener("click", function() {
-    setStorage("dsgACO", document.getElementById('dsg').checked)
-    acoBadge()
-});
-
-document.getElementById('bestbuy').addEventListener("click", function() {
-    setStorage("BBACO", document.getElementById('bestbuy').checked)
-    acoBadge()
-});
-document.getElementById('pokecent').addEventListener("click", function() {
-    setStorage("pokeACO", document.getElementById('pokecent').checked)
-    acoBadge()
-});
-
-
-document.getElementById('finishline').addEventListener("click", function() {
-    setStorage("fnlACO", document.getElementById('finishline').checked)
-    acoBadge()
-});
 document.getElementById('supremeAutoCart').addEventListener("click", function() {
     setStorage("supremeATC", document.getElementById('supremeAutoCart').checked)
 
@@ -442,20 +339,10 @@ document.getElementById('wallmart').addEventListener("click", function() {
     setStorage("walmartACO", document.getElementById('wallmart').checked)
     acoBadge()
 });
-document.getElementById('sqACO').addEventListener("click", function() {
-    setStorage("SQAutoCheckout", document.getElementById('sqACO').checked)
-    acoBadge()
-});
-
 document.getElementById('shopifytocheckout').addEventListener("click", function() {
     setStorage("ATCCHO", document.getElementById('shopifytocheckout').checked)
 
 });
-document.getElementById('sTOC').addEventListener("click", function() {
-    setStorage("sTOC", document.getElementById('sTOC').checked)
-
-});
-
 document.getElementById('sCop').addEventListener("click", function() {
     setStorage("sCop", document.getElementById('sCop').checked)
 

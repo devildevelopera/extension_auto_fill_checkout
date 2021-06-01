@@ -10,17 +10,17 @@
 
 <body>
     <section class="extension-menu" id="extm">
-        <div class="topbuttons">
+        <div class="top-menu">
             <div>
-                <img src="logo.png" />
                 <div>
+                    <img src="logo.png" />
                     <span>Spiria Extension</span>
                 </div>
                 <div>
-                    <span>Main</span>
-                    <span>Detail</span>
-                    <span>Profiles</span>
-                    <span>Setting</span>
+                    <span class="top-menu-main">Main</span>
+                    <span class="top-menu-detail">Detail</span>
+                    <span class="top-menu-profiles">Profiles</span>
+                    <span class="top-menu-settings">Settings</span>
                 </div>
             </div>
 
@@ -36,7 +36,7 @@
                 </label>
             </div>
         </div>
-        <div class="container-menu">
+        <!-- <div class="container-menu">
             <div class="menu-setting active">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -52,24 +52,26 @@
                         d="M26.1011 17.9791H8.86416L8.52684 16.0227H22.6942C23.111 16.0239 23.4859 15.7695 23.6387 15.3818L27.0118 6.88138C27.2168 6.36144 26.9614 5.77377 26.4414 5.56887C26.3223 5.5219 26.1954 5.49798 26.0674 5.49838H6.77279L5.96322 0.843395C5.88008 0.351187 5.4504 -0.00688313 4.95127 0.0001004H1.07212C0.513238 0.0001004 0.0601654 0.453173 0.0601654 1.01205C0.0601654 1.57093 0.513238 2.02401 1.07212 2.02401H4.10798L7.00891 19.1597C7.09205 19.6519 7.52174 20.01 8.02086 20.003H26.1011C26.66 20.003 27.113 19.55 27.113 18.9911C27.113 18.4322 26.66 17.9791 26.1011 17.9791Z" />
                 </svg>
             </div>
-        </div>
+        </div> -->
         <select class="input-select" id="profslect">
         </select>
 
         <div class="container-menu-1">
-
-            <input class="input-autofill" type="checkbox" id="autofill">
-            <label for="autofill" class="btn-autofill" id="autofill">AIO Autofill</label>
-
-            <input class="input-auto-jig" type="checkbox" id="auto-jig">
-            <label for="auto-jig" class="btn-auto-jig">Discord Auto-Auth</label>
-
-            <input class="input-autosubmit" type="checkbox" id="autosubmit">
-            <label for="autosubmit" class="btn-autosubmit" id="autosubmit">Auto Submit</label>
-
+            <div>
+                <input class="input-autofill" type="checkbox" id="autofill">
+                <label for="autofill" class="btn-autofill" id="autofill">AIO Autofill</label>
+            </div>
+            <div>
+                <input class="input-auto-jig" type="checkbox" id="auto-jig">
+                <label for="auto-jig" class="btn-auto-jig">Discord Auto-Auth</label>
+            </div>
+            <div>
+                <input class="input-autosubmit" type="checkbox" id="autosubmit">
+                <label for="autosubmit" class="btn-autosubmit" id="autosubmit">Auto Submit</label>
+            </div>
         </div>
 
-        <div class="container-menu-2" style="display: none;">
+        <div class="container-menu-2">
 
             <div class="container-checkbox">
 
@@ -77,65 +79,28 @@
                 <!-- <label for="shopify" class="btn-shopify">Shopify Auto Checkout</label> -->
                 <label for="shopify" class="btn-shopify">Coming Soon</label>
 
-                <input class="input-dsg" type="checkbox" id="dsg">
-                <!-- <label for="dsg" class="btn-dsg">DSG Auto Checkout</label> -->
-                <label for="dsg" class="btn-dsg">Coming Soon</label>
-
                 <input class="input-wallmart" type="checkbox" id="wallmart">
                 <!-- <label for="wallmart" class="btn-wallmart">Walmart Auto Checkout</label> -->
                 <label for="wallmart" class="btn-wallmart">Coming Soon</label>
-
-                <input class="input-finishline" type="checkbox" id="finishline">
-                <!-- <label for="finishline" class="btn-finishline">Finishline/JD Auto Checkout</label> -->
-                <label for="finishline" class="btn-finishline">Coming Soon</label>
 
                 <input class="input-wallmart" type="checkbox" id="shopifytocheckout">
                 <!-- <label for="shopifytocheckout" class="btn-wallmart">Shopify ATC to Checkout</label> -->
                 <label for="shopifytocheckout" class="btn-wallmart">Coming Soon</label>
 
-                <input class="input-finishline" type="checkbox" id="pokecent">
-                <!-- <label for="pokecent" class="btn-finishline">Pokemon Center ACO</label> -->
-                <label for="pokecent" class="btn-finishline">Coming Soon</label>
-
-                <input class="input-wallmart" type="checkbox" id="bestbuy">
-                <!-- <label for="bestbuy" class="btn-wallmart">BestBuy ACO</label> -->
-                <label for="bestbuy" class="btn-wallmart">Coming Soon</label>
-
-                <input class="input-finishline" type="checkbox" id="sqACO">
-                <!-- <label for="sqACO" class="btn-finishline">SquareSpace ACO</label> -->
-                <label for="sqACO" class="btn-finishline">Coming Soon</label>
-
-                <input class="input-finishline" type="checkbox" id="sTOC">
-                <!-- <label for="sTOC" class="btn-finishline" style="right: 3px; position: relative;">Supreme TOS</label> -->
-                <label for="sTOC" class="btn-finishline" style="right: 3px; position: relative;">Coming Soon</label>
-
-                <input class="input-finishline" type="checkbox" id="sCop">
-                <!-- <label for="sCop" class="btn-finishline" style="left: 3px; position: relative;">Supreme Force Cart</label> -->
-                <label for="sCop" class="btn-finishline" style="left: 3px; position: relative;">Coming Soon</label>
-
-                <input class="input-finishline" type="checkbox" id="supremeAutoCart">
-                <!-- <label for="supremeAutoCart" class="btn-finishline">Supreme ATC to Checkout</label> -->
-                <!-- <label for="supremeAutoCart" class="btn-finishline">Coming Soon</label> -->
-
-                <input class="input-supreme" type="checkbox" id="supreme">
-                <!-- <label for="supreme" class="btn-supreme" style="margin-left: 5px;">Supreme Auto Checkout</label> -->
-                <!-- <label for="supreme" class="btn-supreme" style="margin-left: 5px;">Coming Soon</label> -->
-
             </div>
 
-            <div class="container-input" style="
-            left: 228px;
-            position: relative;
-        " id="delays">
+            <div class="container-input" style="left: 228px; position: relative;" id="delays">
                 <label><img src="images/oval.svg">Delay</label>
                 <input type="number" id="delay">
             </div>
         </div>
 
-        <a class="btn-dashboard">More Settings<svg width="6" height="12" viewBox="0 0 6 12" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+        <a class="btn-dashboard">
+            More Settings
+            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.871948 0.846436L4.87195 6.00005L0.871948 11.1537" stroke-width="2" />
-            </svg></a>
+            </svg>
+        </a>
     </section>
 
 

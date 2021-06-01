@@ -48,8 +48,9 @@ a {
     flex-direction: column;
     align-items: center;
     width: 483.54px;
+    height: 450px;
     box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
-    .topbuttons {
+    .top-menu {
         padding: 4px 14px;
         width: 100%;
         display: flex;
@@ -58,26 +59,33 @@ a {
         background: #302e37;
         justify-content: space-between;
         &>div {
+            height: 28px;
             &:first-child {
                 display: flex;
                 align-items: center;
-                img {
-                    height: 28px;
-                    margin-right: 4px;
-                }
                 &>div {
                     &:first-child {
+                        height: 28px;
+                        width: 140px;
+                        display: flex;
+                        align-items: center;
+                        border-right: 2px solid #FFFFFF;
+                        img {
+                            height: 28px;
+                            margin-right: 8px;
+                        }
                         span {
-                            margin-right: 20px;
-                            border-right: 2px solid #FFFFFF;
+                            font-size: 13px;
+                            line-height: 12px;
                         }
                     }
                     &:last-child {
                         span {
-                            font-weight: 300;
+                            cursor: pointer;
                             font-size: 14px;
+                            font-weight: 300;
                             line-height: 13px;
-                            margin-right: 20px;
+                            margin-left: 30px;
                         }
                     }
                 }
@@ -147,6 +155,34 @@ a {
             }
         }
     }
+    .container-menu-1 {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .btn-autofill,
+        .btn-auto-jig,
+        .btn-autosubmit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 583px;
+            height: 78px;
+            border-radius: 39px;
+            border: 2px solid #FFFFFF;
+            background: transparent;
+            box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+            text-align: center;
+            font-size: 38px;
+            font-family: 'Rany';
+            font-weight: normal;
+            line-height: 34px;
+            color: #FFFFFF;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
     .input-select {
         padding: 0 21px;
         margin-top: 39px;
@@ -176,29 +212,6 @@ a {
                 background: #ea16f5;
                 color: #FFFFFF;
             }
-        }
-    }
-    .btn-autofill,
-    .btn-auto-jig,
-    .btn-autosubmit {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 583px;
-        height: 78px;
-        border-radius: 39px;
-        margin-top: 30px;
-        border: 2px solid #FFFFFF;
-        background: transparent;
-        box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-        text-align: center;
-        font-size: 38px;
-        font-family: 'Rany';
-        font-weight: normal;
-        line-height: 34px;
-        color: #FFFFFF;
-        &:hover {
-            cursor: pointer;
         }
     }
     .input-auto-jig {
@@ -353,38 +366,7 @@ a {
             align-items: center;
             width: 286.84px;
             height: 62px;
-            background: #FFFFFF;
-            box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 13px;
-            /* identical to box height, or 65% */
-            text-align: center;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
-        .input-dsg {
-            display: none;
-            &:checked {
-                &+.btn-dsg {
-                    background: #ea16f5;
-                    color: #FFFFFF;
-                }
-            }
-        }
-        .btn-dsg {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin-top: 22px;
-            width: 286.84px;
-            height: 62px;
-            background: #FFFFFF;
+            background: transparent;
             box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
             border-radius: 4px;
             font-weight: 500;
@@ -409,37 +391,6 @@ a {
         }
         .btn-wallmart {
             margin-right: 20px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin-top: 22px;
-            width: 286.84px;
-            height: 62px;
-            background: #FFFFFF;
-            box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 13px;
-            /* identical to box height, or 65% */
-            text-align: center;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
-        .input-finishline {
-            display: none;
-            &:checked {
-                &+.btn-finishline {
-                    background: #ea16f5;
-                    color: #FFFFFF;
-                }
-            }
-        }
-        .btn-finishline {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -546,27 +497,7 @@ a {
                 cursor: pointer;
             }
         }
-        .btn-dsg {
-            background: #151A30;
-            /* identical to box height, or 65% */
-            text-align: center;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
         .btn-wallmart {
-            background: #151A30;
-            /* identical to box height, or 65% */
-            text-align: center;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
-        .btn-finishline {
             background: #151A30;
             /* identical to box height, or 65% */
             text-align: center;

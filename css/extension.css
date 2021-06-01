@@ -56,11 +56,12 @@ a {
       -ms-flex-align: center;
           align-items: center;
   width: 483.54px;
+  height: 450px;
   -webkit-box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
           box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
 }
 
-.extension-menu .topbuttons {
+.extension-menu .top-menu {
   padding: 4px 14px;
   width: 100%;
   display: -webkit-box;
@@ -76,7 +77,11 @@ a {
           justify-content: space-between;
 }
 
-.extension-menu .topbuttons > div:first-child {
+.extension-menu .top-menu > div {
+  height: 28px;
+}
+
+.extension-menu .top-menu > div:first-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,24 +90,37 @@ a {
           align-items: center;
 }
 
-.extension-menu .topbuttons > div:first-child img {
+.extension-menu .top-menu > div:first-child > div:first-child {
   height: 28px;
-  margin-right: 4px;
-}
-
-.extension-menu .topbuttons > div:first-child > div:first-child span {
-  margin-right: 20px;
+  width: 140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-right: 2px solid #FFFFFF;
 }
 
-.extension-menu .topbuttons > div:first-child > div:last-child span {
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 13px;
-  margin-right: 20px;
+.extension-menu .top-menu > div:first-child > div:first-child img {
+  height: 28px;
+  margin-right: 8px;
 }
 
-.extension-menu .topbuttons > div:last-child {
+.extension-menu .top-menu > div:first-child > div:first-child span {
+  font-size: 13px;
+  line-height: 12px;
+}
+
+.extension-menu .top-menu > div:first-child > div:last-child span {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 13px;
+  margin-left: 30px;
+}
+
+.extension-menu .top-menu > div:last-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,7 +129,7 @@ a {
           align-items: center;
 }
 
-.extension-menu .topbuttons label {
+.extension-menu .top-menu label {
   font-size: 10px;
   line-height: 9px;
 }
@@ -198,6 +216,52 @@ a {
   fill: #FFFFFF;
 }
 
+.extension-menu .container-menu-1 {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.extension-menu .container-menu-1 .btn-autofill,
+.extension-menu .container-menu-1 .btn-auto-jig,
+.extension-menu .container-menu-1 .btn-autosubmit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 583px;
+  height: 78px;
+  border-radius: 39px;
+  border: 2px solid #FFFFFF;
+  background: transparent;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  text-align: center;
+  font-size: 38px;
+  font-family: 'Rany';
+  font-weight: normal;
+  line-height: 34px;
+  color: #FFFFFF;
+}
+
+.extension-menu .container-menu-1 .btn-autofill:hover,
+.extension-menu .container-menu-1 .btn-auto-jig:hover,
+.extension-menu .container-menu-1 .btn-autosubmit:hover {
+  cursor: pointer;
+}
+
 .extension-menu .input-select {
   padding: 0 21px;
   margin-top: 39px;
@@ -239,40 +303,6 @@ a {
 .extension-menu .input-autosubmit:checked + .btn-autosubmit {
   background: #ea16f5;
   color: #FFFFFF;
-}
-
-.extension-menu .btn-autofill,
-.extension-menu .btn-auto-jig,
-.extension-menu .btn-autosubmit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 583px;
-  height: 78px;
-  border-radius: 39px;
-  margin-top: 30px;
-  border: 2px solid #FFFFFF;
-  background: transparent;
-  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-  text-align: center;
-  font-size: 38px;
-  font-family: 'Rany';
-  font-weight: normal;
-  line-height: 34px;
-  color: #FFFFFF;
-}
-
-.extension-menu .btn-autofill:hover,
-.extension-menu .btn-auto-jig:hover,
-.extension-menu .btn-autosubmit:hover {
-  cursor: pointer;
 }
 
 .extension-menu .input-auto-jig {
@@ -487,7 +517,7 @@ a {
           align-items: center;
   width: 286.84px;
   height: 62px;
-  background: #FFFFFF;
+  background: transparent;
   -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
           box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
   border-radius: 4px;
@@ -499,47 +529,6 @@ a {
 }
 
 .extension-menu .container-checkbox .btn-shopify:hover {
-  cursor: pointer;
-}
-
-.extension-menu .container-checkbox .input-dsg {
-  display: none;
-}
-
-.extension-menu .container-checkbox .input-dsg:checked + .btn-dsg {
-  background: #ea16f5;
-  color: #FFFFFF;
-}
-
-.extension-menu .container-checkbox .btn-dsg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 22px;
-  width: 286.84px;
-  height: 62px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 13px;
-  /* identical to box height, or 65% */
-  text-align: center;
-}
-
-.extension-menu .container-checkbox .btn-dsg:hover {
   cursor: pointer;
 }
 
@@ -582,47 +571,6 @@ a {
 }
 
 .extension-menu .container-checkbox .btn-wallmart:hover {
-  cursor: pointer;
-}
-
-.extension-menu .container-checkbox .input-finishline {
-  display: none;
-}
-
-.extension-menu .container-checkbox .input-finishline:checked + .btn-finishline {
-  background: #ea16f5;
-  color: #FFFFFF;
-}
-
-.extension-menu .container-checkbox .btn-finishline {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 22px;
-  width: 286.84px;
-  height: 62px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 13px;
-  /* identical to box height, or 65% */
-  text-align: center;
-}
-
-.extension-menu .container-checkbox .btn-finishline:hover {
   cursor: pointer;
 }
 
@@ -736,16 +684,6 @@ a {
   cursor: pointer;
 }
 
-.extension-menu.dark .btn-dsg {
-  background: #151A30;
-  /* identical to box height, or 65% */
-  text-align: center;
-}
-
-.extension-menu.dark .btn-dsg:hover {
-  cursor: pointer;
-}
-
 .extension-menu.dark .btn-wallmart {
   background: #151A30;
   /* identical to box height, or 65% */
@@ -753,16 +691,6 @@ a {
 }
 
 .extension-menu.dark .btn-wallmart:hover {
-  cursor: pointer;
-}
-
-.extension-menu.dark .btn-finishline {
-  background: #151A30;
-  /* identical to box height, or 65% */
-  text-align: center;
-}
-
-.extension-menu.dark .btn-finishline:hover {
   cursor: pointer;
 }
 
