@@ -14,17 +14,18 @@ $(document).ready(function() {
 
         chrome.storage.local.get(function(items) {
 
-            if (items.supremeAco) {
+            if (items.supremeACO) {
                 document.getElementById('supreme').checked = true
-                $('#delays').show()
             } else {
                 document.getElementById('supreme').checked = false
             }
+
             if (items.walmartACO) {
-                document.getElementById('wallmart').checked = true
+                document.getElementById('stripe').checked = true
             } else {
-                document.getElementById('wallmart').checked = false
+                document.getElementById('stripe').checked = false
             }
+
             if (items.sCop) {
                 document.getElementById('sCop').checked = true
             } else {
@@ -33,10 +34,6 @@ $(document).ready(function() {
 
             if (items.supremeATC) {
                 document.getElementById('supremeAutoCart').checked = true
-            } else {}
-
-            if (!(items.supremeDelay == undefined)) {
-                document.getElementById('delay').value = items.supremeDelay;
             } else {
 
             }
@@ -57,29 +54,22 @@ $(document).ready(function() {
     chrome.storage.local.get(function(items) {
         document.getElementById('profilesSelect').value = items.activeProfile;
 
-        if (items.fillEnabled) {
+        if (items.autofill) {
             document.getElementById('autofill').checked = true
-
         } else {
             document.getElementById('shopify').disabled = true;
-            document.getElementById('wallmart').disabled = true;
+            document.getElementById('stripe').disabled = true;
         }
+
+        if (items.autoauth) {
+            document.getElementById('autoauth').checked = true
+        }
+
         if (items.autosubmit) {
             document.getElementById('autosubmit').checked = true
         }
-        if (items.capClick) {
-            document.getElementById('capcha').checked = true
-        }
-        if (items.autojig) {
-            document.getElementById('autojig').checked = true
-        }
 
-        if (items.ACOEnabled) {
-            document.getElementById('shopify').checked = true
-        } else {
-            document.getElementById('shopify').checked = false
 
-        }
     })
 });
 
@@ -226,7 +216,7 @@ function turnAllOff() {
 }
 
 function acoBadge() {
-    if (document.getElementById('shopify').checked || document.getElementById('wallmart').checked || document.getElementById('supreme').checked) {
+    if (document.getElementById('shopify').checked || document.getElementById('stripe').checked || document.getElementById('supreme').checked) {
         chrome.browserAction.setBadgeBackgroundColor({
             color: [255, 0, 0, 230]
         });
@@ -243,7 +233,7 @@ function acoBadge() {
 
 
 document.getElementById('autofill-btn').addEventListener("click", function() {
-    setStorage("fillEnabled", document.getElementById('autofill').checked);
+    setStorage("autofill", document.getElementById('autofill').checked);
     if (!(document.getElementById('autofill').checked)) {
         chrome.storage.local.set({
             ACOEnabled: false,
@@ -254,15 +244,15 @@ document.getElementById('autofill-btn').addEventListener("click", function() {
             pokeACO: false
         })
         document.getElementById('shopify').disabled = true;
-        document.getElementById('wallmart').disabled = true;
+        document.getElementById('stripe').disabled = true;
 
 
         document.getElementById('shopify').checked = false;
-        document.getElementById('wallmart').checked = false;
+        document.getElementById('stripe').checked = false;
 
     } else {
         document.getElementById('shopify').disabled = false;
-        document.getElementById('wallmart').disabled = false;
+        document.getElementById('stripe').disabled = false;
     }
     acoBadge()
 
@@ -273,13 +263,8 @@ document.getElementById('autosubmit-btn').addEventListener("click", function() {
 
 });
 
-document.getElementById('autojig-btn').addEventListener("click", function() {
-    setStorage("autojig", document.getElementById('autojig').checked)
-});
-
-document.getElementById('capcha').addEventListener("click", function() {
-    setStorage("capClick", document.getElementById('capcha').checked)
-
+document.getElementById('autoauth-btn').addEventListener("click", function() {
+    setStorage("autoauth", document.getElementById('autoauth').checked)
 });
 
 
@@ -293,8 +278,8 @@ document.getElementById('supremeAutoCart').addEventListener("click", function() 
     setStorage("supremeATC", document.getElementById('supremeAutoCart').checked)
 
 });
-document.getElementById('wallmart').addEventListener("click", function() {
-    setStorage("walmartACO", document.getElementById('wallmart').checked)
+document.getElementById('stripe').addEventListener("click", function() {
+    setStorage("walmartACO", document.getElementById('stripe').checked)
     acoBadge()
 });
 document.getElementById('shopifytocheckout').addEventListener("click", function() {
@@ -308,18 +293,13 @@ document.getElementById('sCop').addEventListener("click", function() {
 
 
 document.getElementById('supreme').addEventListener("click", function() {
-    setStorage("supremeAco", document.getElementById('supreme').checked)
+    setStorage("supremeACO", document.getElementById('supreme').checked)
     if (document.getElementById('supreme').checked) {
         $('#delays').show()
     } else {
         $('#delays').hide()
     }
     acoBadge()
-});
-
-document.getElementById('delay').addEventListener("change", function() {
-    setStorage("supremeDelay", document.getElementById('delay').value)
-
 });
 
 document.getElementById('profilesSelect').addEventListener("change", function() {
@@ -329,9 +309,8 @@ document.getElementById('profilesSelect').addEventListener("change", function() 
 })
 
 function setAutoReload() {
-
     var delay = prompt("Please enter autorefresh delay (ms)", "5000");
-    setStorage("autoReload", parseInt(delay))
+    setStorage("autoReload", parseInt(delay));
 }
 
 document.getElementById('autoreload-button').addEventListener("click", setAutoReload)
