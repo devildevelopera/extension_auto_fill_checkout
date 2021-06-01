@@ -37,7 +37,7 @@
     "options_page": "dashboard.html",
     "browser_action": {
         "default_title": "Activate",
-        "default_popup": "extension-menu.html"
+        "default_popup": "extension-popup.html"
     },
     "icons": {
         "128": "logo.png",

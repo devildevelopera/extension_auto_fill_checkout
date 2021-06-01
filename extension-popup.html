@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiria Autofill</title>
+    <link rel="stylesheet" type="text/css" href="css/extension.css">
+</head>
+
+<body>
+    <section class="extension-popup" id="extm">
+        <div class="top-menu">
+            <div>
+                <div>
+                    <img src="logo.png" />
+                    <span>Spiria Extension</span>
+                </div>
+                <div>
+                    <span class="top-menu-main">Main</span>
+                    <span class="top-menu-detail">Detail</span>
+                    <span class="top-menu-profiles">Profiles</span>
+                    <span class="top-menu-settings">Settings</span>
+                </div>
+            </div>
+
+            <div>
+                <input class="input-switch" type="checkbox" id="autoreload-button">
+                <label class="switch-button" for="autoreload-button">
+                    AutoRefresh
+                </label>
+
+                <input class="input-switch" type="checkbox" id="power-button">
+                <label class="switch-button" for="power-button">
+                    <img class="power-off" src="images/icon-power-off.png">
+                </label>
+            </div>
+        </div>
+        <select class="input-select" id="profslect">
+        </select>
+
+        <div class="container-main">
+            <div>
+                <input class="input-autofill" type="checkbox" id="autofill">
+                <label for="autofill" class="btn-autofill" id="autofill">AIO Autofill</label>
+            </div>
+            <div>
+                <input class="input-auto-jig" type="checkbox" id="auto-jig">
+                <label for="auto-jig" class="btn-auto-jig">Discord Auto-Auth</label>
+            </div>
+            <div>
+                <input class="input-autosubmit" type="checkbox" id="autosubmit">
+                <label for="autosubmit" class="btn-autosubmit" id="autosubmit">Auto Submit</label>
+            </div>
+        </div>
+
+        <div class="container-detail">
+
+            <div class="container-checkbox">
+                <div>
+                    <input type="checkbox" id="shopify">
+                    <label for="shopify">Shopify Auto Checkout</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="wallmart">
+                    <label for="wallmart">Stripe Auto Checkout</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="shopifytocheckout">
+                    <label for="shopifytocheckout">Supreme Auto Checkout</label>
+                </div>
+            </div>
+
+            <div class="container-input" style="left: 228px; position: relative;" id="delays">
+                <label><img src="images/oval.svg">Delay</label>
+                <input type="number" id="delay">
+            </div>
+        </div>
+
+        <a class="btn-dashboard">
+            More Settings
+            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.871948 0.846436L4.87195 6.00005L0.871948 11.1537" stroke-width="2" />
+            </svg>
+        </a>
+    </section>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+
+</html>

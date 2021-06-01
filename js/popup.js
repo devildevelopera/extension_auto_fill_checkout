@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#profslect').hide();
     $('.btn-dashboard').hide();
-    $('.container-menu-2').hide();
+    $('.container-detail').hide();
 
     verifyKey()
     profilesToSelect('profslect')
@@ -10,12 +10,10 @@ $(document).ready(function() {
         $("#delays").hide();
 
         $('.top-menu-detail').on('click', function() {
-            $('.menu-setting').removeClass('active');
-            $('.menu-shop').addClass('active');
             $('#profslect').hide();
             $('.btn-dashboard').hide()
-            $('.container-menu-1').hide();
-            $('.container-menu-2').show();
+            $('.container-main').hide();
+            $('.container-detail').show();
 
             chrome.storage.local.get(function(items) {
 
@@ -49,17 +47,9 @@ $(document).ready(function() {
         })
 
 
-        $('.menu-setting').on('click', function() {
-            $('.menu-shop').removeClass('active');
-            $('.menu-setting').addClass('active');
-            $('#profslect').show()
-            $('.btn-dashboard').show()
-            $('.container-menu-2').hide();
-            $('.container-menu-1').show();
-            document.body.style.height = "556px"
-            document.body.style.width = "333px"
-            document.styleSheets[1].addRule("html", "width: 333px; height: 560px")
-
+        $('.top-menu-main').on('click', function() {
+            $('.container-detail').hide();
+            $('.container-main').show();
         })
     });
 
@@ -69,9 +59,6 @@ $(document).ready(function() {
 
     chrome.storage.local.get(function(items) {
         document.getElementById('profslect').value = items.activeProfile;
-        if (items.darkMode) {
-            $('#switch-button').on()
-        }
 
         if (items.fillEnabled) {
             document.getElementById('autofill').checked = true

@@ -8,15 +8,10 @@
 
 body {
   color: #FFFFFF;
-  font-family: "Lemon/Milk";
-  background-color: #F2F2F2;
+  font-family: "Rany";
 }
 
-body.dark {
-  background-color: #121724;
-}
-
-label {
+body label {
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;
@@ -29,45 +24,30 @@ label {
   user-select: none;
 }
 
-input:disabled + label {
-  color: #808588;
-}
-
-.bigimg {
-  max-width: 44px;
-  height: auto;
-}
-
-a {
-  text-decoration: none;
-}
-
-.extension-menu {
-  position: relative;
-  background: #2b2a33;
+.extension-popup {
+  width: 700px;
+  height: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #2b2a33;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 483.54px;
-  height: 450px;
   -webkit-box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
           box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
 }
 
-.extension-menu .top-menu {
-  padding: 4px 14px;
+.extension-popup .top-menu {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-family: 'Rany';
+  padding: 4px 14px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -77,11 +57,7 @@ a {
           justify-content: space-between;
 }
 
-.extension-menu .top-menu > div {
-  height: 28px;
-}
-
-.extension-menu .top-menu > div:first-child {
+.extension-popup .top-menu > div:first-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,8 +66,7 @@ a {
           align-items: center;
 }
 
-.extension-menu .top-menu > div:first-child > div:first-child {
-  height: 28px;
+.extension-popup .top-menu > div:first-child > div:first-child {
   width: 140px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -102,17 +77,17 @@ a {
   border-right: 2px solid #FFFFFF;
 }
 
-.extension-menu .top-menu > div:first-child > div:first-child img {
+.extension-popup .top-menu > div:first-child > div:first-child img {
   height: 28px;
   margin-right: 8px;
 }
 
-.extension-menu .top-menu > div:first-child > div:first-child span {
+.extension-popup .top-menu > div:first-child > div:first-child span {
   font-size: 13px;
   line-height: 12px;
 }
 
-.extension-menu .top-menu > div:first-child > div:last-child span {
+.extension-popup .top-menu > div:first-child > div:last-child span {
   cursor: pointer;
   font-size: 14px;
   font-weight: 300;
@@ -120,7 +95,7 @@ a {
   margin-left: 30px;
 }
 
-.extension-menu .top-menu > div:last-child {
+.extension-popup .top-menu > div:last-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,94 +104,20 @@ a {
           align-items: center;
 }
 
-.extension-menu .top-menu label {
+.extension-popup .top-menu > div:last-child .input-switch {
+  display: none;
+}
+
+.extension-popup .top-menu > div:last-child label.switch-button {
   font-size: 10px;
   line-height: 9px;
 }
 
-.extension-menu .input-switch {
-  display: none;
-}
-
-.extension-menu .switch-button:hover {
+.extension-popup .top-menu > div:last-child label.switch-button:hover {
   cursor: pointer;
 }
 
-.extension-menu .container-menu {
-  margin-top: 33.5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.extension-menu .container-menu .menu-setting {
-  margin-right: 57px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 67px;
-  height: 63px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.0572279);
-          box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.0572279);
-  border-radius: 15px;
-}
-
-.extension-menu .container-menu .menu-setting svg {
-  fill: #515151;
-}
-
-.extension-menu .container-menu .menu-setting:hover {
-  background-color: #ea16f5;
-  cursor: pointer;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.extension-menu .container-menu .menu-setting:hover svg {
-  fill: #FFFFFF;
-}
-
-.extension-menu .container-menu .menu-shop {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 67px;
-  height: 63px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.0572279);
-          box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.0572279);
-  border-radius: 15px;
-}
-
-.extension-menu .container-menu .menu-shop svg {
-  fill: #515151;
-}
-
-.extension-menu .container-menu .menu-shop:hover {
-  background-color: #ea16f5;
-  cursor: pointer;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.extension-menu .container-menu .menu-shop:hover svg {
-  fill: #FFFFFF;
-}
-
-.extension-menu .container-menu-1 {
+.extension-popup .container-main {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -229,21 +130,21 @@ a {
       justify-content: space-around;
 }
 
-.extension-menu .container-menu-1 .btn-autofill,
-.extension-menu .container-menu-1 .btn-auto-jig,
-.extension-menu .container-menu-1 .btn-autosubmit {
+.extension-popup .container-main .btn-autofill,
+.extension-popup .container-main .btn-auto-jig,
+.extension-popup .container-main .btn-autosubmit {
+  width: 583px;
+  height: 78px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-radius: 39px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 583px;
-  height: 78px;
-  border-radius: 39px;
   border: 2px solid #FFFFFF;
   background: transparent;
   -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
@@ -256,17 +157,39 @@ a {
   color: #FFFFFF;
 }
 
-.extension-menu .container-menu-1 .btn-autofill:hover,
-.extension-menu .container-menu-1 .btn-auto-jig:hover,
-.extension-menu .container-menu-1 .btn-autosubmit:hover {
+.extension-popup .container-main .btn-autofill:hover,
+.extension-popup .container-main .btn-auto-jig:hover,
+.extension-popup .container-main .btn-autosubmit:hover {
   cursor: pointer;
 }
 
-.extension-menu .input-select {
-  padding: 0 21px;
-  margin-top: 39px;
-  width: 226px;
-  height: 54px;
+.extension-popup .container-detail {
+  height: 100%;
+}
+
+.extension-popup .container-detail .container-checkbox {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.extension-popup .container-detail .container-checkbox > div input {
+  display: none;
+}
+
+.extension-popup .container-detail .container-checkbox > div input:checked + label {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-popup .container-detail .container-checkbox > div label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,47 +197,61 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #FFFFFF;
-  border: 1px solid #E0E5EB;
-  -webkit-box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
-          box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
-  border-radius: 7px;
-  font-size: 17px;
-  line-height: 20px;
-  /* identical to box height, or 118% */
-  letter-spacing: 0.196787px;
+  width: 583px;
+  height: 78px;
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 13px;
+  text-align: center;
 }
 
-.extension-menu .input-select:hover {
+.extension-popup .container-detail .container-checkbox > div label:hover {
   cursor: pointer;
 }
 
-.extension-menu .input-autofill,
-.extension-menu .input-autosubmit {
-  display: none;
+.extension-popup .container-detail .container-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 24.61px;
 }
 
-.extension-menu .input-autofill:checked + .btn-autofill,
-.extension-menu .input-autofill:checked + .btn-autosubmit,
-.extension-menu .input-autosubmit:checked + .btn-autofill,
-.extension-menu .input-autosubmit:checked + .btn-autosubmit {
-  background: #ea16f5;
-  color: #FFFFFF;
+.extension-popup .container-detail .container-input label {
+  margin-right: 30.8px;
 }
 
-.extension-menu .input-auto-jig {
-  display: none;
+.extension-popup .container-detail .container-input label img {
+  margin-right: 8.8px;
 }
 
-.extension-menu .input-auto-jig:checked + .btn-auto-jig {
-  background: #ea16f5;
-  color: #FFFFFF;
+.extension-popup .container-detail .container-input input {
+  padding: 17px 30px 13px;
+  width: 128px;
+  height: 46px;
+  background: #FFFFFF;
+  border-radius: 3px;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.208362px;
+  color: #515151;
 }
 
-.extension-menu .btn-dashboard {
+.extension-popup .btn-dashboard {
   margin-top: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -345,12 +282,12 @@ a {
   color: #ea16f5;
 }
 
-.extension-menu .btn-dashboard svg {
+.extension-popup .btn-dashboard svg {
   margin-left: 16.15px;
   stroke: #ea16f5;
 }
 
-.extension-menu .btn-dashboard:hover {
+.extension-popup .btn-dashboard:hover {
   cursor: pointer;
   background: #ea16f5;
   color: #FFFFFF;
@@ -358,8 +295,71 @@ a {
           box-shadow: none;
 }
 
-.extension-menu .btn-dashboard:hover svg {
+.extension-popup .btn-dashboard:hover svg {
   stroke: #FFFFFF;
+}
+
+.extension-popup .input-select {
+  padding: 0 21px;
+  margin-top: 39px;
+  width: 226px;
+  height: 54px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #FFFFFF;
+  border: 1px solid #E0E5EB;
+  -webkit-box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
+          box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
+  border-radius: 7px;
+  font-size: 17px;
+  line-height: 20px;
+  /* identical to box height, or 118% */
+  letter-spacing: 0.196787px;
+}
+
+.extension-popup .input-select:hover {
+  cursor: pointer;
+}
+
+.extension-popup .input-autofill,
+.extension-popup .input-autosubmit {
+  display: none;
+}
+
+.extension-popup .input-autofill:checked + .btn-autofill,
+.extension-popup .input-autofill:checked + .btn-autosubmit,
+.extension-popup .input-autosubmit:checked + .btn-autofill,
+.extension-popup .input-autosubmit:checked + .btn-autosubmit {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-popup .input-auto-jig {
+  display: none;
+}
+
+.extension-popup .input-auto-jig:checked + .btn-auto-jig {
+  background: #ea16f5;
+  color: #FFFFFF;
+}
+
+.extension-popup .active {
+  background: #ea16f5 !important;
+  color: #FFFFFF !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.extension-popup .active svg {
+  fill: #FFFFFF !important;
 }
 
 .extension-menu .active {
@@ -371,370 +371,5 @@ a {
 
 .extension-menu .active svg {
   fill: #FFFFFF !important;
-}
-
-.extension-menu.dark {
-  background: #222B45;
-  color: #FFFFFF;
-}
-
-.extension-menu.dark .container-menu .menu-setting {
-  background: #151A30;
-}
-
-.extension-menu.dark .container-menu .menu-setting:hover {
-  background: #ea16f5;
-}
-
-.extension-menu.dark .container-menu .menu-setting:hover svg {
-  fill: #FFFFFF;
-}
-
-.extension-menu.dark .container-menu .menu-shop {
-  background: #151A30;
-}
-
-.extension-menu.dark .container-menu .menu-shop:hover {
-  background: #ea16f5;
-}
-
-.extension-menu.dark .container-menu .menu-shop:hover svg {
-  fill: #FFFFFF;
-}
-
-.extension-menu.dark .input-select {
-  background: #151A30;
-  border: 1px solid #E0E5EB;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  color: inherit;
-}
-
-.extension-menu.dark .input-select:hover {
-  cursor: pointer;
-}
-
-.extension-menu.dark .container-flex-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.extension-menu.dark .btn-autofill,
-.extension-menu.dark .btn-autosubmit {
-  background: #151A30;
-}
-
-.extension-menu.dark .btn-autofill:hover,
-.extension-menu.dark .btn-autosubmit:hover {
-  cursor: pointer;
-}
-
-.extension-menu.dark .btn-auto-jig {
-  background: #151A30;
-  /* identical to box height, or 65% */
-  text-align: center;
-}
-
-.extension-menu.dark .btn-auto-jig:hover {
-  cursor: pointer;
-}
-
-.extension-menu.dark .btn-dashboard {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: none;
-  background: #151A30;
-  color: #FFFFFF;
-}
-
-.extension-menu.dark .btn-dashboard svg {
-  stroke: #FFFFFF;
-}
-
-.extension-menu.dark .btn-dashboard:hover {
-  background: #ea16f5;
-  color: #FFFFFF;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.extension-menu.dark .btn-dashboard:hover svg {
-  stroke: #FFFFFF;
-}
-
-.extension-menu {
-  width: 700px;
-}
-
-.extension-menu .container-checkbox {
-  padding: 0 50px;
-  margin-top: 15.81px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.extension-menu .container-checkbox .input-shopify {
-  display: none;
-}
-
-.extension-menu .container-checkbox .input-shopify:checked + .btn-shopify {
-  background: #ea16f5;
-  color: #FFFFFF;
-}
-
-.extension-menu .container-checkbox .btn-shopify {
-  margin-top: 22px;
-  margin-right: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 286.84px;
-  height: 62px;
-  background: transparent;
-  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 13px;
-  /* identical to box height, or 65% */
-  text-align: center;
-}
-
-.extension-menu .container-checkbox .btn-shopify:hover {
-  cursor: pointer;
-}
-
-.extension-menu .container-checkbox .input-wallmart {
-  display: none;
-}
-
-.extension-menu .container-checkbox .input-wallmart:checked + .btn-wallmart {
-  background: #ea16f5;
-  color: #FFFFFF;
-}
-
-.extension-menu .container-checkbox .btn-wallmart {
-  margin-right: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 22px;
-  width: 286.84px;
-  height: 62px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 13px;
-  /* identical to box height, or 65% */
-  text-align: center;
-}
-
-.extension-menu .container-checkbox .btn-wallmart:hover {
-  cursor: pointer;
-}
-
-.extension-menu .container-checkbox .input-supreme {
-  display: none;
-}
-
-.extension-menu .container-checkbox .input-supreme:checked + .btn-supreme {
-  background: #ea16f5;
-  color: #FFFFFF;
-}
-
-.extension-menu .container-checkbox .btn-supreme {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 22px;
-  width: 286.84px;
-  height: 62px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 13px;
-  /* identical to box height, or 65% */
-  text-align: center;
-}
-
-.extension-menu .container-checkbox .btn-supreme:hover {
-  cursor: pointer;
-}
-
-.extension-menu .container-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 24.61px;
-}
-
-.extension-menu .container-input label {
-  margin-right: 30.8px;
-}
-
-.extension-menu .container-input label img {
-  margin-right: 8.8px;
-}
-
-.extension-menu .container-input input {
-  padding: 17px 30px 13px;
-  width: 128px;
-  height: 46px;
-  background: #FFFFFF;
-  border-radius: 3px;
-  border: none;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 18px;
-  /* identical to box height, or 50% */
-  letter-spacing: 0.208362px;
-  color: #515151;
-}
-
-.extension-menu .active {
-  background: #ea16f5 !important;
-  color: #FFFFFF !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-}
-
-.extension-menu .active svg {
-  fill: #FFFFFF !important;
-}
-
-.extension-menu.dark {
-  background: #222B45;
-  color: #FFFFFF;
-}
-
-.extension-menu.dark .input-select {
-  background: #151A30;
-  border: 1px solid #E0E5EB;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  color: inherit;
-}
-
-.extension-menu.dark .input-select:hover {
-  cursor: pointer;
-}
-
-.extension-menu.dark .btn-shopify {
-  background: #151A30;
-}
-
-.extension-menu.dark .btn-shopify:hover {
-  cursor: pointer;
-}
-
-.extension-menu.dark .btn-wallmart {
-  background: #151A30;
-  /* identical to box height, or 65% */
-  text-align: center;
-}
-
-.extension-menu.dark .btn-wallmart:hover {
-  cursor: pointer;
-}
-
-.extension-menu.dark .btn-supreme {
-  background: #151A30;
-}
-
-.extension-menu.dark .btn-supreme:hover {
-  cursor: pointer;
-}
-
-.extension-menu.dark .container-input input {
-  color: inherit;
-  background: #151A30;
-}
-
-.extension-menu.dark .btn-dashboard {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: none;
-  background: #151A30;
-  color: #FFFFFF;
-}
-
-.extension-menu.dark .btn-dashboard svg {
-  margin-left: 16.15px;
-  stroke: #FFFFFF;
-}
-
-.extension-menu.dark .btn-dashboard:hover {
-  background: #ea16f5;
-  color: #FFFFFF;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.extension-menu.dark .btn-dashboard:hover svg {
-  stroke: #FFFFFF;
-}
-
-@media only screen and (max-width: 690px) {
-  .extension-menu .container-checkbox .btn-shopify,
-  .extension-menu .container-checkbox .btn-wallmart {
-    margin-right: 0;
-  }
 }
 /*# sourceMappingURL=extension.css.map */

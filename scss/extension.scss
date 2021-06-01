@@ -7,65 +7,43 @@
 
 body {
     color: #FFFFFF;
-    font-family: "Lemon/Milk";
-    background-color: #F2F2F2;
-    &.dark {
-        background-color: #121724;
+    font-family: "Rany";
+    label {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Old versions of Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
     }
 }
 
-label {
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Safari */
-    -khtml-user-select: none;
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Old versions of Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
-}
-
-input:disabled+label {
-    color: #808588;
-}
-
-.bigimg {
-    max-width: 44px;
-    height: auto;
-}
-
-a {
-    text-decoration: none;
-}
-
-.extension-menu {
-    position: relative;
-    background: #2b2a33;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 483.54px;
+.extension-popup {
+    width: 700px;
     height: 450px;
+    display: flex;
+    align-items: center;
+    background: #2b2a33;
+    flex-direction: column;
     box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.0578562);
     .top-menu {
-        padding: 4px 14px;
         width: 100%;
         display: flex;
-        font-family: 'Rany';
+        padding: 4px 14px;
         align-items: center;
         background: #302e37;
         justify-content: space-between;
         &>div {
-            height: 28px;
             &:first-child {
                 display: flex;
                 align-items: center;
                 &>div {
                     &:first-child {
-                        height: 28px;
                         width: 140px;
                         display: flex;
                         align-items: center;
@@ -93,69 +71,20 @@ a {
             &:last-child {
                 display: flex;
                 align-items: center;
-            }
-        }
-        label {
-            font-size: 10px;
-            line-height: 9px;
-        }
-    }
-    .input-switch {
-        display: none;
-    }
-    .switch-button {
-        &:hover {
-            cursor: pointer;
-        }
-    }
-    .container-menu {
-        margin-top: 33.5px;
-        display: flex;
-        .menu-setting {
-            margin-right: 57px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 67px;
-            height: 63px;
-            background: #FFFFFF;
-            box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.0572279);
-            border-radius: 15px;
-            svg {
-                fill: #515151;
-            }
-            &:hover {
-                background-color: #ea16f5;
-                cursor: pointer;
-                box-shadow: none;
-                svg {
-                    fill: #FFFFFF;
+                .input-switch {
+                    display: none;
                 }
-            }
-        }
-        .menu-shop {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 67px;
-            height: 63px;
-            background: #FFFFFF;
-            box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.0572279);
-            border-radius: 15px;
-            svg {
-                fill: #515151;
-            }
-            &:hover {
-                background-color: #ea16f5;
-                cursor: pointer;
-                box-shadow: none;
-                svg {
-                    fill: #FFFFFF;
+                label.switch-button {
+                    font-size: 10px;
+                    line-height: 9px;
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
             }
         }
     }
-    .container-menu-1 {
+    .container-main {
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -163,12 +92,12 @@ a {
         .btn-autofill,
         .btn-auto-jig,
         .btn-autosubmit {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             width: 583px;
             height: 78px;
+            display: flex;
             border-radius: 39px;
+            align-items: center;
+            justify-content: center;
             border: 2px solid #FFFFFF;
             background: transparent;
             box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
@@ -180,6 +109,101 @@ a {
             color: #FFFFFF;
             &:hover {
                 cursor: pointer;
+            }
+        }
+    }
+    .container-detail {
+        height: 100%;
+        .container-checkbox {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            &>div {
+                input {
+                    display: none;
+                    &:checked {
+                        &+label {
+                            background: #ea16f5;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+                label {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 583px;
+                    height: 78px;
+                    background: transparent;
+                    border: 2px solid #FFFFFF;
+                    box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 13px;
+                    text-align: center;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .container-input {
+            display: flex;
+            align-items: center;
+            margin-top: 24.61px;
+            label {
+                margin-right: 30.8px;
+                img {
+                    margin-right: 8.8px;
+                }
+            }
+            input {
+                padding: 17px 30px 13px;
+                width: 128px;
+                height: 46px;
+                background: #FFFFFF;
+                border-radius: 3px;
+                border: none;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 18px;
+                letter-spacing: 0.208362px;
+                color: #515151;
+            }
+        }
+    }
+    .btn-dashboard {
+        margin-top: 35px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 184px;
+        height: 54px;
+        background: #FFFFFF;
+        border: 1px solid #E0E5EB;
+        box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
+        border-radius: 7px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        /* identical to box height, or 131% */
+        text-align: center;
+        letter-spacing: 0.0621336px;
+        color: #ea16f5;
+        svg {
+            margin-left: 16.15px;
+            stroke: #ea16f5;
+        }
+        &:hover {
+            cursor: pointer;
+            background: #ea16f5;
+            color: #FFFFFF;
+            box-shadow: none;
+            svg {
+                stroke: #FFFFFF;
             }
         }
     }
@@ -223,39 +247,6 @@ a {
             }
         }
     }
-    .btn-dashboard {
-        margin-top: 35px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 184px;
-        height: 54px;
-        background: #FFFFFF;
-        border: 1px solid #E0E5EB;
-        box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
-        border-radius: 7px;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 21px;
-        /* identical to box height, or 131% */
-        text-align: center;
-        letter-spacing: 0.0621336px;
-        color: #ea16f5;
-        svg {
-            margin-left: 16.15px;
-            stroke: #ea16f5;
-        }
-        &:hover {
-            cursor: pointer;
-            background: #ea16f5;
-            color: #FFFFFF;
-            box-shadow: none;
-            svg {
-                stroke: #FFFFFF;
-            }
-        }
-    }
     .active {
         background: #ea16f5 !important;
         color: #FFFFFF !important;
@@ -264,291 +255,15 @@ a {
             fill: #FFFFFF !important;
         }
     }
-    &.dark {
-        background: #222B45;
-        color: #FFFFFF;
-        .container-menu {
-            .menu-setting {
-                background: #151A30;
-                &:hover {
-                    background: #ea16f5;
-                    svg {
-                        fill: #FFFFFF;
-                    }
-                }
-            }
-            .menu-shop {
-                background: #151A30;
-                &:hover {
-                    background: #ea16f5;
-                    svg {
-                        fill: #FFFFFF;
-                    }
-                }
-            }
-        }
-        .input-select {
-            background: #151A30;
-            border: 1px solid #E0E5EB;
-            box-shadow: none;
-            color: inherit;
-            &:hover {
-                cursor: pointer;
-            }
-        }
-        .container-flex-row {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-        .btn-autofill,
-        .btn-autosubmit {
-            background: #151A30;
-            &:hover {
-                cursor: pointer;
-            }
-        }
-        .btn-auto-jig {
-            background: #151A30;
-            /* identical to box height, or 65% */
-            text-align: center;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
-        .btn-dashboard {
-            box-shadow: none;
-            border: none;
-            background: #151A30;
-            color: #FFFFFF;
-            svg {
-                stroke: #FFFFFF;
-            }
-            &:hover {
-                background: #ea16f5;
-                color: #FFFFFF;
-                box-shadow: none;
-                svg {
-                    stroke: #FFFFFF;
-                }
-            }
-        }
-    }
 }
 
-// extension menu 2 
 .extension-menu {
-    width: 700px;
-    .container-checkbox {
-        padding: 0 50px;
-        margin-top: 15.81px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        .input-shopify {
-            display: none;
-            &:checked {
-                &+.btn-shopify {
-                    background: #ea16f5;
-                    color: #FFFFFF;
-                }
-            }
-        }
-        .btn-shopify {
-            margin-top: 22px;
-            margin-right: 20px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            width: 286.84px;
-            height: 62px;
-            background: transparent;
-            box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 13px;
-            /* identical to box height, or 65% */
-            text-align: center;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
-        .input-wallmart {
-            display: none;
-            &:checked {
-                &+.btn-wallmart {
-                    background: #ea16f5;
-                    color: #FFFFFF;
-                }
-            }
-        }
-        .btn-wallmart {
-            margin-right: 20px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin-top: 22px;
-            width: 286.84px;
-            height: 62px;
-            background: #FFFFFF;
-            box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 13px;
-            /* identical to box height, or 65% */
-            text-align: center;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
-        .input-supreme {
-            display: none;
-            &:checked {
-                &+.btn-supreme {
-                    background: #ea16f5;
-                    color: #FFFFFF;
-                }
-            }
-        }
-        .btn-supreme {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin-top: 22px;
-            width: 286.84px;
-            height: 62px;
-            background: #FFFFFF;
-            box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 13px;
-            /* identical to box height, or 65% */
-            text-align: center;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
-    }
-    .container-input {
-        display: flex;
-        align-items: center;
-        margin-top: 24.61px;
-        label {
-            margin-right: 30.8px;
-            img {
-                margin-right: 8.8px;
-            }
-        }
-        input {
-            padding: 17px 30px 13px;
-            width: 128px;
-            height: 46px;
-            background: #FFFFFF;
-            border-radius: 3px;
-            border: none;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 18px;
-            /* identical to box height, or 50% */
-            letter-spacing: 0.208362px;
-            color: #515151;
-        }
-    }
     .active {
         background: #ea16f5 !important;
         color: #FFFFFF !important;
         box-shadow: none !important;
         svg {
             fill: #FFFFFF !important;
-        }
-    }
-    &.dark {
-        background: #222B45;
-        color: #FFFFFF;
-        .input-select {
-            background: #151A30;
-            border: 1px solid #E0E5EB;
-            box-shadow: none;
-            color: inherit;
-            &:hover {
-                cursor: pointer;
-            }
-        }
-        .btn-shopify {
-            background: #151A30;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
-        .btn-wallmart {
-            background: #151A30;
-            /* identical to box height, or 65% */
-            text-align: center;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
-        .btn-supreme {
-            background: #151A30;
-            &:hover {
-                // background: #ea16f5;
-                // color: #FFFFFF;
-                cursor: pointer;
-            }
-        }
-        .container-input {
-            input {
-                color: inherit;
-                background: #151A30;
-            }
-        }
-        .btn-dashboard {
-            box-shadow: none;
-            border: none;
-            background: #151A30;
-            color: #FFFFFF;
-            svg {
-                margin-left: 16.15px;
-                stroke: #FFFFFF;
-            }
-            &:hover {
-                background: #ea16f5;
-                color: #FFFFFF;
-                box-shadow: none;
-                svg {
-                    stroke: #FFFFFF;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 690px) {
-    .extension-menu {
-        .container-checkbox {
-            .btn-shopify,
-            .btn-wallmart {
-                margin-right: 0;
-            }
         }
     }
 }
