@@ -6,6 +6,35 @@ $(document).ready(function() {
     verifyKey();
     profilesToSelect();
 
+    chrome.storage.local.get(function(items) {
+
+        $('#profilesSelect').value = items.activeProfile;
+
+        if (items.autofill) {
+            $('#autofill').checked = true
+        } else {
+            $('#shopify').disabled = true;
+            $('#stripe').disabled = true;
+        }
+
+        if (items.autoauth) {
+            $('#autoauth').checked = true
+        }
+
+        if (items.autosubmit) {
+            $('#autosubmit').checked = true
+        }
+    });
+
+
+    /* top menu events */
+
+    $('.top-menu-main').on('click', function() {
+        $('.container-main').show();
+        $('.container-detail').hide();
+        $('.container-profiles').hide();
+    })
+
     $('.top-menu-detail').on('click', function() {
 
         $('.container-main').hide();
@@ -15,78 +44,161 @@ $(document).ready(function() {
         chrome.storage.local.get(function(items) {
 
             if (items.shopifyACO) {
-                document.getElementById('shopify').checked = true
+                $('#shopify').checked = true
             } else {
-                document.getElementById('shopify').checked = false
+                $('#shopify').checked = false
             }
 
             if (items.stripeACO) {
-                document.getElementById('stripe').checked = true
+                $('#stripe').checked = true
             } else {
-                document.getElementById('stripe').checked = false
+                $('#stripe').checked = false
             }
 
             if (items.supremeACO) {
-                document.getElementById('supreme').checked = true
+                $('#supreme').checked = true
             } else {
-                document.getElementById('supreme').checked = false
+                $('#supreme').checked = false
             }
 
         })
     })
 
-
-    $('.top-menu-main').on('click', function() {
+    $('.top-menu-profiles').on('click', function() {
+        $('.container-main').hide();
         $('.container-detail').hide();
-        $('.container-main').show();
+        $('.container-profiles').show();
     })
+
 
     $(".top-menu-settings").on('click', function(e) {
         chrome.runtime.openOptionsPage();
     })
 
-    chrome.storage.local.get(function(items) {
+    $('#power-button').on("click", turnAllOff);
 
-        document.getElementById('profilesSelect').value = items.activeProfile;
+    $('#autoreload-button').on("click", setAutoReload);
 
-        if (items.autofill) {
-            document.getElementById('autofill').checked = true
+
+    /* container main events */
+
+    $('#autofill-btn').on("click", function() {
+        setStorage("autofill", $('#autofill').checked);
+
+        if ($('#autofill').checked) {
+            $('#shopify').disabled = false;
+            $('#stripe').disabled = false;
+            $('#supreme').disabled = false;
+
         } else {
-            document.getElementById('shopify').disabled = true;
-            document.getElementById('stripe').disabled = true;
-        }
+            chrome.storage.local.set({
+                shopifyACO: false,
+                stripeACO: false,
+                supremeACO: false,
+            });
 
-        if (items.autoauth) {
-            document.getElementById('autoauth').checked = true
+            $('#shopify').disabled = true;
+            $('#stripe').disabled = true;
+            $('#supreme').disabled = true;
         }
+    })
 
-        if (items.autosubmit) {
-            document.getElementById('autosubmit').checked = true
-        }
+    $('#autoauth-btn').on("click", function() {
+        setStorage("autoauth", $('#autoauth').checked)
+    });
+
+    $('#autosubmit-btn').on("click", function() {
+        setStorage("autosubmit", $('#autosubmit').checked)
+    });
+
+
+    /* container detail events */
+
+    $('#shopify').on("click", function() {
+        setStorage("shopifyACO", $('#shopify').checked)
+    });
+
+    $('#stripe').on("click", function() {
+        setStorage("stripeACO", $('#stripe').checked)
+    });
+
+    $('#supreme').on("click", function() {
+        setStorage("supremeACO", $('#supreme').checked);
+    });
+
+
+    /* container profiles events */
+
+    $('#profilesSelect').on("change", function() {
+        setProfileActive($('#profilesSelect').value);
     });
 
 });
 
-
-function profilesToSelect() {
-
-    var sel = document.getElementById('profilesSelect');
+function verifyKey() {
 
     chrome.storage.local.get(function(items) {
-        if (items.profiles) {
-            profiles = dctNames(items.profiles);
-            var i = 0
-            for (i = 0; i < profiles.length; i++) {
-                console.log(profiles[i])
-                var opt = document.createElement('option');
-                opt.innerText = profiles[i];
-                opt.value = profiles[i];
-                sel.appendChild(opt);
-            }
+        if (!(items.key === undefined)) {
+            chrome.instanceID.getID(function(info) {
+                var hwid = info;
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+                myHeaders.append("Authorization", "Bearer pk_OiSBDetXFlJyR6eajdnFe4aALE1BYpuG");
+
+                var requestOptions = {
+                    method: 'GET',
+                    headers: myHeaders,
+                    body: JSON.stringify({
+                        metadata: { hwid }
+                    })
+                };
+
+                fetch(`https://api.hyper.co/v4/licenses/${items.key}`, requestOptions)
+                    .then(response => response.text())
+                    .then(result => {
+                        var resultDTC = JSON.parse(result);
+
+                        if (resultDTC) {
+                            console.log("Verified");
+                        } else {
+                            chrome.storage.local.remove(['key', 'activation_token']);
+                            chrome.storage.local.set({
+                                activated: false
+                            })
+
+                            chrome.runtime.openOptionsPage();
+                        }
+                    })
+                    .catch(error => console.log('error', error));
+            });
+
+        } else {
+            chrome.storage.local.remove(['key', 'activation_token']);
+            chrome.storage.local.set({
+                activated: false
+            });
+
+            chrome.runtime.openOptionsPage();
         }
     })
 }
 
+function profilesToSelect() {
+
+    var select = $('#profilesSelect');
+
+    chrome.storage.local.get(function(items) {
+        if (items.profiles) {
+            profiles = dctNames(items.profiles);
+            for (var i = 0; i < profiles.length; i++) {
+                var opt = document.createElement('option');
+                opt.innerText = profiles[i];
+                opt.value = profiles[i];
+                select.appendChild(opt);
+            }
+        }
+    })
+}
 
 function dctNames(dct) {
 
@@ -95,11 +207,10 @@ function dctNames(dct) {
 }
 
 function setProfileActive(profile) {
-    console.log("Activating")
 
     chrome.storage.local.get(function(items) {
 
-        var profiledct = items.profiles[profile]
+        var profiledct = items.profiles[profile];
 
         setStorage("fName", profiledct.fName)
         setStorage("lName", profiledct.lName)
@@ -132,63 +243,17 @@ function setProfileActive(profile) {
 
 }
 
-
-
-function verifyKey() {
-
-    chrome.storage.local.get(function(items) {
-        if (!(items.key === undefined)) {
-            chrome.instanceID.getID(function(info) {
-                var hwid = info;
-                var myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/json");
-                myHeaders.append("Authorization", "Bearer pk_OiSBDetXFlJyR6eajdnFe4aALE1BYpuG");
-
-                var requestOptions = {
-                    method: 'GET',
-                    headers: myHeaders,
-                    body: JSON.stringify({
-                        metadata: { hwid }
-                    })
-                };
-
-                fetch(`https://api.hyper.co/v4/licenses/${items.key}`, requestOptions)
-                    .then(response => response.text())
-                    .then(result => {
-                        var resultDTC = JSON.parse(result)
-                        console.log(resultDTC)
-                        if (resultDTC) {
-                            console.log("Verified");
-                        } else {
-                            chrome.storage.local.remove(['key', 'activation_token']);
-                            chrome.storage.local.set({
-                                activated: false
-                            })
-
-                            chrome.runtime.openOptionsPage();
-                        }
-                    })
-                    .catch(error => console.log('error', error));
-            });
-
-        } else {
-            chrome.storage.local.remove(['key', 'activation_token']);
-            chrome.storage.local.set({
-                activated: false
-            });
-
-            chrome.runtime.openOptionsPage();
-        }
-    })
-}
-
-
 function setStorage(variable, value) {
 
     chrome.storage.local.set({
         [variable]: value
     });
 
+}
+
+function setAutoReload() {
+    var delay = prompt("Please enter autorefresh delay (ms)", "5000");
+    setStorage("autoReload", parseInt(delay));
 }
 
 function turnAllOff() {
@@ -202,69 +267,3 @@ function turnAllOff() {
         }
     }
 }
-
-document.getElementById('autofill-btn').addEventListener("click", function() {
-    setStorage("autofill", document.getElementById('autofill').checked);
-    if (!(document.getElementById('autofill').checked)) {
-        chrome.storage.local.set({
-            ACOEnabled: false,
-            fnlACO: false,
-            stripeACO: false,
-            SQAutoCheckout: false,
-            BBACO: false,
-            pokeACO: false
-        })
-        document.getElementById('shopify').disabled = true;
-        document.getElementById('stripe').disabled = true;
-
-
-        document.getElementById('shopify').checked = false;
-        document.getElementById('stripe').checked = false;
-
-    } else {
-        document.getElementById('shopify').disabled = false;
-        document.getElementById('stripe').disabled = false;
-    }
-})
-
-document.getElementById('autosubmit-btn').addEventListener("click", function() {
-    setStorage("autosubmit", document.getElementById('autosubmit').checked)
-});
-
-document.getElementById('autoauth-btn').addEventListener("click", function() {
-    setStorage("autoauth", document.getElementById('autoauth').checked)
-});
-
-
-document.getElementById('power-button').addEventListener("click", turnAllOff);
-
-document.getElementById('shopify').addEventListener("click", function() {
-    setStorage("ACOEnabled", document.getElementById('shopify').checked)
-});
-
-document.getElementById('supremeAutoCart').addEventListener("click", function() {
-    setStorage("supremeATC", document.getElementById('supremeAutoCart').checked)
-});
-
-document.getElementById('stripe').addEventListener("click", function() {
-    setStorage("stripeACO", document.getElementById('stripe').checked)
-});
-
-document.getElementById('supreme').addEventListener("click", function() {
-    setStorage("ATCCHO", document.getElementById('supreme').checked)
-});
-
-document.getElementById('supreme').addEventListener("click", function() {
-    setStorage("supremeACO", document.getElementById('supreme').checked);
-});
-
-document.getElementById('profilesSelect').addEventListener("change", function() {
-    setProfileActive(document.getElementById('profilesSelect').value)
-})
-
-function setAutoReload() {
-    var delay = prompt("Please enter autorefresh delay (ms)", "5000");
-    setStorage("autoReload", parseInt(delay));
-}
-
-document.getElementById('autoreload-button').addEventListener("click", setAutoReload)
