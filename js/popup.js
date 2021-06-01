@@ -14,28 +14,22 @@ $(document).ready(function() {
 
         chrome.storage.local.get(function(items) {
 
-            if (items.supremeACO) {
-                document.getElementById('supreme').checked = true
+            if (items.shopifyACO) {
+                document.getElementById('shopify').checked = true
             } else {
-                document.getElementById('supreme').checked = false
+                document.getElementById('shopify').checked = false
             }
 
-            if (items.walmartACO) {
+            if (items.stripeACO) {
                 document.getElementById('stripe').checked = true
             } else {
                 document.getElementById('stripe').checked = false
             }
 
-            if (items.sCop) {
-                document.getElementById('sCop').checked = true
+            if (items.supremeACO) {
+                document.getElementById('supreme').checked = true
             } else {
-
-            }
-
-            if (items.supremeATC) {
-                document.getElementById('supremeAutoCart').checked = true
-            } else {
-
+                document.getElementById('supreme').checked = false
             }
 
         })
@@ -209,30 +203,13 @@ function turnAllOff() {
     }
 }
 
-function acoBadge() {
-    if (document.getElementById('shopify').checked || document.getElementById('stripe').checked || document.getElementById('supreme').checked) {
-        chrome.browserAction.setBadgeBackgroundColor({
-            color: [255, 0, 0, 230]
-        });
-        chrome.browserAction.setBadgeText({
-            text: "ACO"
-        });
-    } else {
-        chrome.browserAction.setBadgeText({
-            text: ""
-        });
-    }
-
-}
-
-
 document.getElementById('autofill-btn').addEventListener("click", function() {
     setStorage("autofill", document.getElementById('autofill').checked);
     if (!(document.getElementById('autofill').checked)) {
         chrome.storage.local.set({
             ACOEnabled: false,
             fnlACO: false,
-            walmartACO: false,
+            stripeACO: false,
             SQAutoCheckout: false,
             BBACO: false,
             pokeACO: false
@@ -248,9 +225,6 @@ document.getElementById('autofill-btn').addEventListener("click", function() {
         document.getElementById('shopify').disabled = false;
         document.getElementById('stripe').disabled = false;
     }
-
-    acoBadge();
-
 })
 
 document.getElementById('autosubmit-btn').addEventListener("click", function() {
@@ -266,7 +240,6 @@ document.getElementById('power-button').addEventListener("click", turnAllOff);
 
 document.getElementById('shopify').addEventListener("click", function() {
     setStorage("ACOEnabled", document.getElementById('shopify').checked)
-    acoBadge();
 });
 
 document.getElementById('supremeAutoCart').addEventListener("click", function() {
@@ -274,28 +247,15 @@ document.getElementById('supremeAutoCart').addEventListener("click", function() 
 });
 
 document.getElementById('stripe').addEventListener("click", function() {
-    setStorage("walmartACO", document.getElementById('stripe').checked)
-    acoBadge();
+    setStorage("stripeACO", document.getElementById('stripe').checked)
 });
 
-document.getElementById('shopifytocheckout').addEventListener("click", function() {
-    setStorage("ATCCHO", document.getElementById('shopifytocheckout').checked)
-});
-
-document.getElementById('sCop').addEventListener("click", function() {
-    setStorage("sCop", document.getElementById('sCop').checked)
+document.getElementById('supreme').addEventListener("click", function() {
+    setStorage("ATCCHO", document.getElementById('supreme').checked)
 });
 
 document.getElementById('supreme').addEventListener("click", function() {
     setStorage("supremeACO", document.getElementById('supreme').checked);
-
-    if (document.getElementById('supreme').checked) {
-        $('#delays').show()
-    } else {
-        $('#delays').hide()
-    }
-
-    acoBadge();
 });
 
 document.getElementById('profilesSelect').addEventListener("change", function() {
