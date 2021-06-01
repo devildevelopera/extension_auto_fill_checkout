@@ -1,7 +1,7 @@
 let settings;
 
 window.onload = function() {
-    chrome.storage.local.get({ profiles: [], activeProfile: null, enabled: false, settings: {}, autofill: false }, (results) => {
+    chrome.storage.local.get({ profiles: [], activeProfile: null, enabled: false, autofill: false }, (results) => {
         activeProfile = results.activeProfile;
         profile = results.profiles[`${activeProfile}`];
         settings = results.settings;
