@@ -194,7 +194,7 @@ function profilesToSelect() {
                 var opt = document.createElement('option');
                 opt.innerText = profiles[i];
                 opt.value = profiles[i];
-                select.appendChild(opt);
+                select.append(opt);
             }
         }
     })
