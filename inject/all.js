@@ -1,5 +1,6 @@
 window.onload = function() {
     chrome.storage.local.get({ profiles: [], activeProfile: null, autofill: false, autosubmit: false }, (results) => {
+        console.log(results);
         activeProfile = results.activeProfile;
         profile = results.profiles[`${activeProfile}`];
 

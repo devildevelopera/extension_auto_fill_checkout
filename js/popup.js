@@ -8,21 +8,21 @@ $(document).ready(function() {
 
     chrome.storage.local.get(function(items) {
 
-        $('#profilesSelect').value = items.activeProfile;
+        $('#profilesSelect').val(items.activeProfile);
 
         if (items.autofill) {
-            $('#autofill').checked = true
+            $('#autofill').prop('checked', true);
         } else {
-            $('#shopify').disabled = true;
-            $('#stripe').disabled = true;
+            $('#shopify').prop('disabled', true);
+            $('#stripe').prop('disabled', true);
         }
 
         if (items.autoauth) {
-            $('#autoauth').checked = true
+            $('#autoauth').prop('checked', true);
         }
 
         if (items.autosubmit) {
-            $('#autosubmit').checked = true
+            $('#autosubmit').prop('checked', true);
         }
     });
 
@@ -44,21 +44,21 @@ $(document).ready(function() {
         chrome.storage.local.get(function(items) {
 
             if (items.shopifyACO) {
-                $('#shopify').checked = true
+                $('#shopify').prop('checked', true);
             } else {
-                $('#shopify').checked = false
+                $('#shopify').prop('checked ', false);
             }
 
             if (items.stripeACO) {
-                $('#stripe').checked = true
+                $('#stripe').prop('checked', true);
             } else {
-                $('#stripe').checked = false
+                $('#stripe').prop('checked ', false);
             }
 
             if (items.supremeACO) {
-                $('#supreme').checked = true
+                $('#supreme').prop('checked', true);
             } else {
-                $('#supreme').checked = false
+                $('#supreme').prop('checked ', false);
             }
 
         })
@@ -83,12 +83,11 @@ $(document).ready(function() {
     /* container main events */
 
     $('#autofill-btn').on("click", function() {
-        setStorage("autofill", $('#autofill').checked);
-
-        if ($('#autofill').checked) {
-            $('#shopify').disabled = false;
-            $('#stripe').disabled = false;
-            $('#supreme').disabled = false;
+        console.log($('#autofill').is(":checked"));
+        if ($('#autofill').is(":checked")) {
+            $('#shopify').prop('disabled ', false);
+            $('#stripe').prop('disabled ', false);
+            $('#supreme').prop('disabled ', false);
 
         } else {
             chrome.storage.local.set({
@@ -97,40 +96,41 @@ $(document).ready(function() {
                 supremeACO: false,
             });
 
-            $('#shopify').disabled = true;
-            $('#stripe').disabled = true;
-            $('#supreme').disabled = true;
+            $('#shopify').prop('disabled', true);
+            $('#stripe').prop('disabled', true);
+            $('#supreme').prop('disabled', true);
         }
+
+        setStorage("autofill", $('#autofill').is(":checked"));
     })
 
     $('#autoauth-btn').on("click", function() {
-        setStorage("autoauth", $('#autoauth').checked)
+        setStorage("autoauth", $('#autoauth').is(":checked"))
     });
 
     $('#autosubmit-btn').on("click", function() {
-        setStorage("autosubmit", $('#autosubmit').checked)
+        setStorage("autosubmit", $('#autosubmit').is(":checked"))
     });
 
 
     /* container detail events */
 
     $('#shopify').on("click", function() {
-        setStorage("shopifyACO", $('#shopify').checked)
+        setStorage("shopifyACO", $('#shopify').is(":checked"))
     });
 
     $('#stripe').on("click", function() {
-        setStorage("stripeACO", $('#stripe').checked)
+        setStorage("stripeACO", $('#stripe').is(":checked"))
     });
 
     $('#supreme').on("click", function() {
-        setStorage("supremeACO", $('#supreme').checked);
+        setStorage("supremeACO", $('#supreme').is(":checked"));
     });
-
 
     /* container profiles events */
 
     $('#profilesSelect').on("change", function() {
-        setProfileActive($('#profilesSelect').value);
+        setProfileActive($('#profilesSelect').val());
     });
 
 });
