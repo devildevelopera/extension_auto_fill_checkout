@@ -1,10 +1,8 @@
-let settings;
-
 window.onload = function() {
-    chrome.storage.local.get({ profiles: [], activeProfile: null, enabled: false, autofill: false }, (results) => {
+    chrome.storage.local.get({ profiles: [], activeProfile: null, autofill: false }, (results) => {
         activeProfile = results.activeProfile;
         profile = results.profiles[`${activeProfile}`];
-        settings = results.settings;
+
         if (results.autofill) {
             if (profile) {
                 if (currentStep() == 'contact_information') {
@@ -39,18 +37,12 @@ window.onload = function() {
                     fillField('#checkout_billing_address_country', profile.country, true);
                     fillField('#checkout_billing_address_province', profile.state, true);
 
-                    console.log(hasCaptcha());
-
-
-                    if (settings.shopify.processCheckoutSteps) {
-                        if (!hasCaptcha()) {
-                            continueToNextStep();
-                        }
-                    }
-                } else if (currentStep() == 'shipping_method') {
-                    if (settings.shopify.processCheckoutSteps) {
+                    if (!hasCaptcha()) {
                         continueToNextStep();
                     }
+
+                } else if (currentStep() == 'shipping_method') {
+                    continueToNextStep();
                 }
             }
         }
@@ -58,7 +50,7 @@ window.onload = function() {
 }
 
 chrome.extension.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.action === 'completeCheckout' && settings.shopify.completeCheckout) {
+    if (request.action === 'completeCheckout') {
         let completeCheckout = setTimeout(() => {
             continueToNextStep();
             clearTimeout(completeCheckout);

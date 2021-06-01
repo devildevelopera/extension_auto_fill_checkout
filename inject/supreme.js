@@ -1,10 +1,8 @@
-let settings;
-
 window.onload = function() {
-    chrome.storage.local.get({ profiles: [], activeProfile: null, enabled: false, autofill: false }, (results) => {
+    chrome.storage.local.get({ profiles: [], activeProfile: null, autofill: false }, (results) => {
         activeProfile = results.activeProfile;
         profile = results.profiles[`${activeProfile}`];
-        settings = results.settings;
+
         if (results.autofill) {
             if (profile) {
 
@@ -35,9 +33,7 @@ window.onload = function() {
                 document.getElementsByClassName('icheckbox_minimal')[1].click();
                 document.querySelector('.terms .icheckbox_minimal').classList.add('checked');
 
-                if (settings.supreme.processPayment) {
-                    document.querySelector('.button, .checkout').click();
-                }
+                document.querySelector('.button, .checkout').click();
             }
         }
     });
@@ -47,7 +43,7 @@ function fillField(id, value, select = false) {
     let element = document.getElementById(id);
     if (element) {
         element.focus();
-        if (settings.simulateTyping && !select) {
+        if (!select) {
             simulateTyping(element, value, 0);
         } else {
             element.value = value;
