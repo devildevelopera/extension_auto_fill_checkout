@@ -162,10 +162,6 @@ body label {
 
 .extension-popup .container-detail {
   height: 100%;
-}
-
-.extension-popup .container-detail .container-checkbox {
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,16 +173,16 @@ body label {
       justify-content: space-around;
 }
 
-.extension-popup .container-detail .container-checkbox > div input {
+.extension-popup .container-detail > div input {
   display: none;
 }
 
-.extension-popup .container-detail .container-checkbox > div input:checked + label {
+.extension-popup .container-detail > div input:checked + label {
   background: #ea16f5;
   color: #FFFFFF;
 }
 
-.extension-popup .container-detail .container-checkbox > div label {
+.extension-popup .container-detail > div label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,56 +207,8 @@ body label {
   text-align: center;
 }
 
-.extension-popup .container-detail .container-checkbox > div label:hover {
+.extension-popup .container-detail > div label:hover {
   cursor: pointer;
-}
-
-.extension-popup .btn-dashboard {
-  margin-top: 35px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 184px;
-  height: 54px;
-  background: #FFFFFF;
-  border: 1px solid #E0E5EB;
-  -webkit-box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
-          box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
-  border-radius: 7px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 21px;
-  /* identical to box height, or 131% */
-  text-align: center;
-  letter-spacing: 0.0621336px;
-  color: #ea16f5;
-}
-
-.extension-popup .btn-dashboard svg {
-  margin-left: 16.15px;
-  stroke: #ea16f5;
-}
-
-.extension-popup .btn-dashboard:hover {
-  cursor: pointer;
-  background: #ea16f5;
-  color: #FFFFFF;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.extension-popup .btn-dashboard:hover svg {
-  stroke: #FFFFFF;
 }
 
 .extension-popup .input-select {

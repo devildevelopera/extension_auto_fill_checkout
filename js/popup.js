@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#profslect').hide();
+    $('.container-profiles').hide();
     $('.container-detail').hide();
 
     verifyKey()
@@ -9,7 +9,7 @@ $(document).ready(function() {
         $("#delays").hide();
 
         $('.top-menu-detail').on('click', function() {
-            $('#profslect').hide();
+            $('.container-profiles').hide();
             $('.container-main').hide();
             $('.container-detail').show();
 
