@@ -1,6 +1,5 @@
 $(document).ready(function() {
     $('#profslect').hide();
-    $('.btn-dashboard').hide();
     $('.container-detail').hide();
 
     verifyKey()
@@ -11,7 +10,6 @@ $(document).ready(function() {
 
         $('.top-menu-detail').on('click', function() {
             $('#profslect').hide();
-            $('.btn-dashboard').hide()
             $('.container-main').hide();
             $('.container-detail').show();
 
@@ -53,7 +51,7 @@ $(document).ready(function() {
         })
     });
 
-    $(".btn-dashboard").on('click', function(e) {
+    $(".top-menu-settings").on('click', function(e) {
         chrome.runtime.openOptionsPage();
     })
 
