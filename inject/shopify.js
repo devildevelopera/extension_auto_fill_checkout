@@ -67,12 +67,8 @@ function fillField(id, value, select = false) {
     let element = document.querySelector(id);
     if (element) {
         element.focus();
-        if (settings.simulateTyping && !select) {
-            simulateTyping(element, value, 0);
-        } else {
-            element.value = value;
-            element.dispatchEvent(new Event('change'));
-        }
+        element.value = value;
+        element.dispatchEvent(new Event('change'));
         element.blur();
     }
 }
