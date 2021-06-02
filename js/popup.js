@@ -148,7 +148,6 @@ $(document).ready(function() {
 
     $('.profiles-duplicate-btn').on('click', function() {
         chrome.storage.local.get(function(items) {
-            console.log(items);
             let profiles = items.profiles;
             const activeProfile = profiles[`${items.activeProfile}`];
             const newProfileName = items.activeProfile + '_1';
@@ -160,7 +159,20 @@ $(document).ready(function() {
                 $('#profilesSelect').val(newProfileName);
             }, 100)
         });
-    })
+    });
+
+    $('.profiles-delete-btn').on('click', function() {
+        chrome.storage.local.get(function(items) {
+            let profiles = items.profiles;
+            delete profiles[`${items.activeProfile}`];
+            setStorage('profiles', profiles);
+            setStorage('activeProfile', Object.keys(profiles)[0]);
+            profilesToSelect();
+            setTimeout(function() {
+                $('#profilesSelect').val(Object.keys(profiles)[0]);
+            }, 100)
+        });
+    });
 
 });
 
