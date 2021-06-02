@@ -211,15 +211,34 @@ body label {
   cursor: pointer;
 }
 
-.extension-popup .container-profiles .input-select {
-  width: 226px;
-  height: 54px;
+.extension-popup .container-profiles {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 42% 58%;
+      grid-template-columns: 42% 58%;
+}
+
+.extension-popup .container-profiles > div:first-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 17px;
-  line-height: 20px;
-  border-radius: 7px;
+  margin-top: 42px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.extension-popup .container-profiles > div:first-child .input-select {
+  width: 221px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 30px;
+  color: #FFFFFF;
+  padding-left: 8px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -228,13 +247,49 @@ body label {
       -ms-flex-align: center;
           align-items: center;
   background: transparent;
-  border: 1px solid #E0E5EB;
-  letter-spacing: 0.196787px;
-  -webkit-box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
-          box-shadow: 0px 3px 12px rgba(228, 228, 228, 0.5);
+  -webkit-appearance: none;
+  border: 2px solid #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+          box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
+  background: url("../images/drop-arrow-down-white.png") no-repeat right;
+  background-position-x: 175px;
 }
 
-.extension-popup .container-profiles .input-select:hover {
+.extension-popup .container-profiles > div:first-child .input-select:hover {
   cursor: pointer;
+}
+
+.extension-popup .container-profiles > div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.extension-popup .container-profiles > div:last-child label {
+  width: 375px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  font-size: 39px;
+  line-height: 35px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 2px solid #FFFFFF;
+}
+
+.extension-popup .container-profiles > div:last-child label:active {
+  background-color: #ea16f5;
 }
 /*# sourceMappingURL=extension.css.map */
