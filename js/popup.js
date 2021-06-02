@@ -8,7 +8,6 @@ $(document).ready(function() {
 
     chrome.storage.local.get(function(items) {
 
-        console.log(items);
         $('#profilesSelect').val(items.activeProfile);
 
         if (items.autofill) {
@@ -147,6 +146,22 @@ $(document).ready(function() {
         setProfileActive($('#profilesSelect').val());
     });
 
+    $('.profiles-duplicate-btn').on('click', function() {
+        chrome.storage.local.get(function(items) {
+            console.log(items);
+            let profiles = items.profiles;
+            const activeProfile = profiles[`${items.activeProfile}`];
+            const newProfileName = items.activeProfile + '_1';
+            profiles[`${newProfileName}`] = activeProfile;
+            setStorage('profiles', profiles);
+            setStorage('activeProfile', newProfileName);
+            profilesToSelect();
+            setTimeout(function() {
+                $('#profilesSelect').val(newProfileName);
+            }, 100)
+        });
+    })
+
 });
 
 function verifyKey() {
@@ -200,6 +215,7 @@ function verifyKey() {
 function profilesToSelect() {
 
     var select = $('#profilesSelect');
+    select.children().remove();
 
     chrome.storage.local.get(function(items) {
         if (items.profiles) {

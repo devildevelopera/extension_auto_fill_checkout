@@ -162,7 +162,7 @@ body {
                     width: 221px;
                     height: 50px;
                     display: flex;
-                    font-size: 30px;
+                    font-size: 20px;
                     color: #FFFFFF;
                     padding-left: 8px;
                     flex-direction: row;
@@ -173,6 +173,12 @@ body {
                     box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.0572279);
                     background: url("../images/drop-arrow-down-white.png") no-repeat right;
                     background-position-x: 175px;
+                    option {
+                        padding: 10px !important;
+                        font-size: 20px !important;
+                        color: #FFFFFF !important;
+                        background: #2b2a33 !important;
+                    }
                     &:hover {
                         cursor: pointer;
                     }
