@@ -37,7 +37,7 @@ $(document).ready(function() {
             $('#key').prop("disabled", true);
         }
 
-        if (items.profiles == undefined) {
+        if (Object.keys(items.profiles).length === 0) {
             $('#profilelist').hide()
             $('#profilecreation').hide()
             $('#pcp2').hide()
