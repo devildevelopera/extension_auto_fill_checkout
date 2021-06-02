@@ -8,6 +8,7 @@ $(document).ready(function() {
 
     chrome.storage.local.get(function(items) {
 
+        console.log(items);
         $('#profilesSelect').val(items.activeProfile);
 
         if (items.autofill) {
@@ -83,13 +84,16 @@ $(document).ready(function() {
     /* container main events */
 
     $('#autofill-btn').on("click", function() {
-        console.log($('#autofill').is(":checked"));
         if ($('#autofill').is(":checked")) {
+            $('#autofill').prop('checked', false);
+
             $('#shopify').prop('disabled ', false);
             $('#stripe').prop('disabled ', false);
             $('#supreme').prop('disabled ', false);
 
         } else {
+            $('#autofill').prop('checked', true);
+
             chrome.storage.local.set({
                 shopifyACO: false,
                 stripeACO: false,
@@ -105,10 +109,20 @@ $(document).ready(function() {
     })
 
     $('#autoauth-btn').on("click", function() {
+        if ($('#autoauth').is(":checked")) {
+            $('#autoauth').prop('checked', false);
+        } else {
+            $('#autoauth').prop('checked', true);
+        }
         setStorage("autoauth", $('#autoauth').is(":checked"))
     });
 
     $('#autosubmit-btn').on("click", function() {
+        if ($('#autosubmit').is(":checked")) {
+            $('#autosubmit').prop('checked', false);
+        } else {
+            $('#autosubmit').prop('checked', true);
+        }
         setStorage("autosubmit", $('#autosubmit').is(":checked"))
     });
 
@@ -201,9 +215,9 @@ function profilesToSelect() {
 }
 
 function dctNames(dct) {
-
-    return Object.keys(dct)
-
+    if (dct) {
+        return Object.keys(dct)
+    }
 }
 
 function setProfileActive(profile) {
