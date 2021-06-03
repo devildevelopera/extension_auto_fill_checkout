@@ -224,7 +224,7 @@ body label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 42px;
+  margin-top: 30px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -274,8 +274,6 @@ body label {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
 .extension-popup .container-profiles > div:last-child label {
@@ -286,6 +284,7 @@ body label {
   display: flex;
   cursor: pointer;
   font-size: 39px;
+  margin: 30px 0;
   line-height: 35px;
   -webkit-box-align: center;
       -ms-flex-align: center;

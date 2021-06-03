@@ -35,7 +35,7 @@ $(document).ready(function() {
         $('.container-profiles').hide();
     })
 
-    $('.top-menu-detail').on('click', function() {
+    $('.top-menu-retail').on('click', function() {
 
         $('.container-main').hide();
         $('.container-detail').show();
