@@ -1,4 +1,5 @@
 @import url("http://fonts.cdnfonts.com/css/lemonmilk");
+@import url("http://db.onlinewebfonts.com/c/53f0f9aada3a5dcc9b45bd983e191d5c?family=Rany");
 * {
   padding: 0;
   margin: 0;
@@ -67,7 +68,7 @@ body label {
 }
 
 .extension-popup .top-menu > div:first-child > div:first-child {
-  width: 140px;
+  width: 160px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,7 +93,7 @@ body label {
   font-size: 14px;
   font-weight: 300;
   line-height: 13px;
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 .extension-popup .top-menu > div:last-child {
