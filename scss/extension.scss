@@ -1,5 +1,9 @@
 @import url('http://fonts.cdnfonts.com/css/lemonmilk');
-@import url('http://db.onlinewebfonts.com/c/53f0f9aada3a5dcc9b45bd983e191d5c?family=Rany');
+@font-face {
+    font-family: "Rany";
+    src: url("../fonts/Rany.otf");
+}
+
 * {
     padding: 0;
     margin: 0;
